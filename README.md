@@ -1,32 +1,57 @@
 # Aldwyn Labs website
 
-First unpublished website template. Plain HTML, CSS and JavaScript with no build dependencies or backend.
+An unpublished nine-page studio website, preserving the selected extended AL monogram and dark aubergine/iris identity. Source is maintained in this repository. GitHub access is verified; a separate Codex Cloud environment or automatic chat/repository sync has not been verified.
 
-## Preview
+## Work on the site
 
-Run `python3 -m http.server 3000 --directory dist` and open the local address printed by the server. In ChatGPT Work's managed environment use `sites-preview start /absolute/path/to/checkout` instead.
+Requires Node.js 22 or newer. No package installation or third-party dependencies.
 
-## Current scope
+```sh
+npm run build
+npm run check
+```
 
-- Responsive homepage, mobile menu, services, optional care, delivery approach, studio introduction and FAQs.
-- Project brief validation, local text-file download and clipboard copy with a manual-copy fallback.
-- Selected extended AL SVG master; aubergine, plum, iris, soft white and muted lavender palette.
-- Manrope and Inter fonts hosted locally with their licences. Typography remains a proposal for review.
+Edit `src/`, then rebuild. `scripts/build.mjs` combines page descriptors with shared navigation, metadata and footer; generated HTML/CSS/JS is tracked in `dist/`. HTML under `dist/` is regenerated and stale HTML routes are removed on each build. Keep permanent assets under `dist/assets/`; do not hand-edit generated pages.
 
-The form does not submit data and nothing is stored online. Do not imply delivery. A real enquiry route needs confirmed business contact information and a separately scoped implementation.
+In ChatGPT Work, use `sites-preview start /workspace/sites/aldwyn-labs` and the exact returned URL. If a preview is already running, use `sites-preview status`. Outside that managed environment, a static server can serve `dist/`, for example `python3 -m http.server 3000 --directory dist`.
 
-## Before launch
+## Pages and editable sources
 
-Confirm domain, business contacts, final content and font pairing; implement and test the chosen enquiry route; review actual privacy requirements; approve a micro favicon; verify desktop/mobile and keyboard flows; remove the preview-only noindex and unpublished footer text only as part of an authorized launch. No analytics or third-party scripts are installed.
+| Route | Source |
+| --- | --- |
+| `/` | `src/pages/main.mjs` |
+| `/services/` | `src/pages/services.mjs` |
+| `/website-care/` | `src/pages/services.mjs` |
+| `/portfolio/` | `src/pages/portfolio.mjs` and `src/data/projects.mjs` |
+| `/portfolio/pj-sweeney/` | Generated from project data |
+| `/portfolio/carwales/` | Generated from project data |
+| `/portfolio/aldwyn-labs/` | Generated from project data |
+| `/studio/` | `src/pages/main.mjs` |
+| `/start/` | `src/pages/main.mjs` and `src/project-form.mjs` |
 
-There is no Site registration, production hosting or automatic deployment configured. `.openai/hosting.json` describes the local static preview directory (`dist`) only and has no project ID.
+Shared behavior: `src/app.js`. Styling: `src/base.css`, `src/site.css`, `src/pages/services.css` and `src/pages/portfolio.css`. Shared shell: `scripts/build.mjs`. Exact brand assets and font licences: `dist/assets/`.
 
-## Brand source
+## Adding portfolio projects
 
-Aldwyn-Identity-and-Website-Guide.pdf and Aldwyn-Brand-Identity-Kit-v1.zip in the Aldwyn Labs ChatGPT project/Library. Earlier exploratory logos are superseded. Use one SVG geometry and do not redraw the monogram. The full symbol is intended from 48 px visible width; favicon work is pending.
+Add an approved object to the `projects` array in `src/data/projects.mjs`, using the existing entry as a schema. Give it a unique lowercase hyphenated `slug`, accurate `status` and `type`, summary, disciplines, brief, design decisions, scope and progress statement. The listing and individual route are generated together.
 
-## Verification on 19 November 2026
+For a preview image, add the permitted image to `dist/assets/projects/` and set `preview: {src: '/assets/projects/example.webp', alt: 'Meaningful description', caption: 'Accurate context'}`. Only the current Aldwyn entry uses `artwork: 'aldwyn'`. Entries without imagery show a neutral project panel. Do not copy that artwork setting onto unrelated projects. Confirm permission for client names, content, imagery and links. Label concepts and work in progress; no invented results. Rebuild and check all links before committing. Removing a data entry removes its generated HTML on the next build.
 
-Passed: JavaScript syntax; unique HTML IDs and internal anchor targets; referenced local assets; preview font/image loading; desktop visual review at 1363 px; care-link FAQ opening; project brief generation; clipboard copy; file download; invalid email rejection; whitespace-only brief rejection; stale brief hidden after input changes; keyboard Tab movement with visible focus.
+## Form and launch boundaries
 
-Independent code review completed. Mobile menu labelling and safe no-JavaScript form behaviour were corrected. CSS includes mobile/tablet breakpoints, but a true narrow-viewport browser pass remains pending because the available browser API did not expose viewport resizing. Do not describe this as fully mobile-tested or launch-ready.
+Service buttons can carry intent into the local brief with `service=new`, `redesign`, `care` or `guidance`. The optional `extra` values are `pages`, `showcase`, `connection` and `migration`. Only these values are accepted. Care hides/disables website extras; unknown query values are ignored. An optional existing website address helps with care or redesign briefs without requesting that address over the network.
+
+The Services page explains core deliverables, scoped extras, content inputs, ownership and separate project/care/third-party costs. Care uses one flexible plan; actual fees, task cadence, content allowance and support/exit terms need to be decided before selling a plan. No commercial price or service-level commitment is introduced by the website copy.
+
+The project-start form is a local brief builder. It validates input, prepares text, and offers copy/download. It has no submission endpoint, online storage, analytics or third-party scripts. HTML submit starts disabled until the local JavaScript handler is installed. Do not relabel it as an enquiry form without implementing and testing real delivery and appropriate data handling.
+
+All pages are marked noindex/nofollow. This is a review setting, not access control. No site has been published or registered for hosting by this change. Domain, business email/phone, hosting, final typography/UI, simplified favicon, real enquiry handling and launch approval remain open. No canonical domain or sitemap has been invented.
+
+See `docs/BUILD-BRIEF.md` for scope and decisions, `docs/DESIGN-RESEARCH.md` for research, and `docs/VALIDATION.md` for actual checks and remaining limits.
+
+## Live portfolio previews
+
+The founder requested Patrick J. Sweeney Solicitors and Carwales be included on 19 November 2026. The portfolio uses actual browser-captured homepage images from that date and native HTTPS live-preview links that open in a new tab. The homepage features both entries from the same project data. Carwales remains labelled Live / In progress; public availability does not establish final client acceptance.
+
+Both client sites prevent cross-origin framing: Carwales returns X-Frame-Options: sameorigin, and P.J. Sweeney refused an actual embedded-browser attempt. The site therefore does not embed them or proxy around their restrictions. No remote site loads until a visitor follows the live-preview link. The screenshots are snapshots, not automatically refreshed. Refresh them with supported browser capture when the live sites change. No enquiries, purchases or client-site edits were performed.
+
