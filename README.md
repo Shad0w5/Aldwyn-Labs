@@ -1,57 +1,58 @@
 # Aldwyn Labs website
 
-An unpublished nine-page studio website, preserving the selected extended AL monogram and dark aubergine/iris identity. Source is maintained in this repository. GitHub access is verified; a separate Codex Cloud environment or automatic chat/repository sync has not been verified.
+Nine-page business website review build, using the selected extended AL monogram and dark aubergine/iris identity. Editable source and generated static output are maintained in this GitHub repository. GitHub access is verified; a separate Codex Cloud environment and automatic chat/repository sync are not verified.
+
+## Current review and deployment
+
+The founder has connected Render to `website/multi-page-studio` and supplied `https://aldwyn-labs.onrender.com/`. The visual redesign is isolated on `website/editorial-polish`, based on commit `8c7344e1e5f858f7cb88906cfe359c5018b0047a`, so it does not update the connected branch. Do not merge or move it to a deployment branch without launch authorization.
+
+For a Render Static Site serving this repository: root directory blank, build command `npm run build`, publish directory `dist`. A previous deployment served the repository root, leaving `/` unavailable while `/dist/index.html` existed; these settings were recommended, but no Render setting change or successful production recheck is claimed by this redesign.
 
 ## Work on the site
 
-Requires Node.js 22 or newer. No package installation or third-party dependencies.
+Requires Node.js 22 or newer. No package installation or third-party application dependencies.
 
 ```sh
 npm run build
 npm run check
 ```
 
-Edit `src/`, then rebuild. `scripts/build.mjs` combines page descriptors with shared navigation, metadata and footer; generated HTML/CSS/JS is tracked in `dist/`. HTML under `dist/` is regenerated and stale HTML routes are removed on each build. Keep permanent assets under `dist/assets/`; do not hand-edit generated pages.
+Edit `src/`, then rebuild. `scripts/build.mjs` combines page descriptors with shared navigation, metadata and footer. Generated HTML/CSS/JS is tracked in `dist/`; stale HTML routes are removed on each build. Keep permanent assets under `dist/assets/` and do not hand-edit generated pages.
 
-In ChatGPT Work, use `sites-preview start /workspace/sites/aldwyn-labs` and the exact returned URL. If a preview is already running, use `sites-preview status`. Outside that managed environment, a static server can serve `dist/`, for example `python3 -m http.server 3000 --directory dist`.
+In ChatGPT Work, use `sites-preview start /workspace/sites/aldwyn-labs` and the exact returned URL. If already running, use `sites-preview status`. Outside that managed environment, any static host can serve `dist/`.
 
-## Pages and editable sources
+## Pages and source
 
-| Route | Source |
+| Route | Editable source |
 | --- | --- |
 | `/` | `src/pages/main.mjs` |
 | `/services/` | `src/pages/services.mjs` |
 | `/website-care/` | `src/pages/services.mjs` |
-| `/portfolio/` | `src/pages/portfolio.mjs` and `src/data/projects.mjs` |
+| `/portfolio/` | `src/pages/portfolio.mjs`, `src/data/projects.mjs` |
 | `/portfolio/pj-sweeney/` | Generated from project data |
 | `/portfolio/carwales/` | Generated from project data |
 | `/portfolio/aldwyn-labs/` | Generated from project data |
-| `/studio/` | `src/pages/main.mjs` |
-| `/start/` | `src/pages/main.mjs` and `src/project-form.mjs` |
+| `/studio/` | `src/pages/studio.mjs` |
+| `/start/` | `src/pages/main.mjs`, `src/project-form.mjs` |
 
-Shared behavior: `src/app.js`. Styling: `src/base.css`, `src/site.css`, `src/pages/services.css` and `src/pages/portfolio.css`. Shared shell: `scripts/build.mjs`. Exact brand assets and font licences: `dist/assets/`.
+Shared behavior: `src/app.js`. Styling: `src/base.css`, `src/site.css`, `src/pages/services.css`, `src/pages/portfolio.css`. Shared shell: `scripts/build.mjs`. Brand assets and font licences: `dist/assets/`.
 
-## Adding portfolio projects
+## Adding projects and imagery
 
-Add an approved object to the `projects` array in `src/data/projects.mjs`, using the existing entry as a schema. Give it a unique lowercase hyphenated `slug`, accurate `status` and `type`, summary, disciplines, brief, design decisions, scope and progress statement. The listing and individual route are generated together.
+Add an approved object to `projects` in `src/data/projects.mjs`, following the current schema with a unique lowercase hyphenated slug, accurate status, summary, focus, overview and scope. Listing and detail pages generate together. Removing a data entry removes its generated page on rebuild.
 
-For a preview image, add the permitted image to `dist/assets/projects/` and set `preview: {src: '/assets/projects/example.webp', alt: 'Meaningful description', caption: 'Accurate context'}`. Only the current Aldwyn entry uses `artwork: 'aldwyn'`. Entries without imagery show a neutral project panel. Do not copy that artwork setting onto unrelated projects. Confirm permission for client names, content, imagery and links. Label concepts and work in progress; no invented results. Rebuild and check all links before committing. Removing a data entry removes its generated HTML on the next build.
+For a screenshot, add the permitted file to `dist/assets/projects/` and set its `preview` source, meaningful alt text and accurate caption. Only the Aldwyn entry uses `artwork: 'aldwyn'`. Confirm client names, content, imagery and links; distinguish concepts and work in progress. Do not invent results or delivery roles.
 
-## Form and launch boundaries
+The founder requested Patrick J. Sweeney Solicitors and Carwales on 19 November 2026. Their previews are dated browser captures and native HTTPS new-tab links. Carwales stays Live / In progress until final acceptance is confirmed. Both client sites prevent framing, so no remote site is embedded or automatically loaded. No proxy bypass is used. Captures need refreshing when the live sites change.
 
-Service buttons can carry intent into the local brief with `service=new`, `redesign`, `care` or `guidance`. The optional `extra` values are `pages`, `showcase`, `connection` and `migration`. Only these values are accepted. Care hides/disables website extras; unknown query values are ignored. An optional existing website address helps with care or redesign briefs without requesting that address over the network.
+The locally hosted architectural photograph is an editorial texture, not an Aldwyn office or client project. Photographer, source, licence and encodings are recorded in `docs/ASSET-SOURCES.md`. Preserve those notes when replacing imagery.
 
-The Services page explains core deliverables, scoped extras, content inputs, ownership and separate project/care/third-party costs. Care uses one flexible plan; actual fees, task cadence, content allowance and support/exit terms need to be decided before selling a plan. No commercial price or service-level commitment is introduced by the website copy.
+## Brief builder and launch boundaries
 
-The project-start form is a local brief builder. It validates input, prepares text, and offers copy/download. It has no submission endpoint, online storage, analytics or third-party scripts. HTML submit starts disabled until the local JavaScript handler is installed. Do not relabel it as an enquiry form without implementing and testing real delivery and appropriate data handling.
+Service links accept `service=new`, `redesign`, `care` or `guidance`. Optional `extra` values are `pages`, `showcase`, `connection`, `migration`. Unknown values are ignored. Care hides/disables extras. The optional existing URL is held as text; the application does not request it.
 
-All pages are marked noindex/nofollow. This is a review setting, not access control. No site has been published or registered for hosting by this change. Domain, business email/phone, hosting, final typography/UI, simplified favicon, real enquiry handling and launch approval remain open. No canonical domain or sitemap has been invented.
+The form prepares a local brief with copy/download. It has no submission endpoint, application storage, analytics or third-party scripts. HTML submit starts disabled until JavaScript handling is installed. Do not present it as enquiry delivery without implementing and testing a real contact flow and appropriate data handling.
 
-See `docs/BUILD-BRIEF.md` for scope and decisions, `docs/DESIGN-RESEARCH.md` for research, and `docs/VALIDATION.md` for actual checks and remaining limits.
+All pages retain noindex/nofollow for review. This is not access control. Business email/phone, real enquiry delivery, custom domain, final care fees/allowances/support terms, tiny favicon, final design acceptance and launch approval remain open. No canonical domain, sitemap or contact details are invented.
 
-## Live portfolio previews
-
-The founder requested Patrick J. Sweeney Solicitors and Carwales be included on 19 November 2026. The portfolio uses actual browser-captured homepage images from that date and native HTTPS live-preview links that open in a new tab. The homepage features both entries from the same project data. Carwales remains labelled Live / In progress; public availability does not establish final client acceptance.
-
-Both client sites prevent cross-origin framing: Carwales returns X-Frame-Options: sameorigin, and P.J. Sweeney refused an actual embedded-browser attempt. The site therefore does not embed them or proxy around their restrictions. No remote site loads until a visitor follows the live-preview link. The screenshots are snapshots, not automatically refreshed. Refresh them with supported browser capture when the live sites change. No enquiries, purchases or client-site edits were performed.
-
+See `docs/BUILD-BRIEF.md`, `docs/VALIDATION.md`, `docs/DESIGN-RESEARCH.md` and `docs/ASSET-SOURCES.md` for decisions, checks and sources. Current review images are in `docs/images/editorial-*-2026-11-19.jpg`.

@@ -15,10 +15,14 @@ for(const file of pages){
 }
 for(const [file,{text}] of docs){
  for(const match of text.matchAll(/\b(href|src|srcset)="([^"]+)"/g)){
-  const url=match[2].replaceAll('&amp;','&');if(/^(?:https?:|data:|mailto:|tel:)/.test(url)){if(!url.startsWith('data:')&&!(match[1]==='href'&&approvedLiveUrls.has(url)))errors.push(`${file}: unexpected external endpoint ${url}`);continue;}
-  const [route,hash]=url.split('#');const pathname=route.split('?')[0];let target=pathname.startsWith('/')?path.join(root,pathname):path.resolve(path.dirname(file),pathname||path.basename(file));
-  try{if((await stat(target)).isDirectory())target=path.join(target,'index.html');await stat(target);}catch{errors.push(`${file}: missing ${url}`);continue;}
-  if(hash&&!docs.get(target)?.ids.has(hash))errors.push(`${file}: broken anchor ${url}`);
+  const raw=match[2].replaceAll('&amp;','&');
+  const urls=match[1]==='srcset'?raw.split(',').map(item=>item.trim().split(/\s+/)[0]):[raw];
+  for(const url of urls){
+   if(/^(?:https?:|data:|mailto:|tel:)/.test(url)){if(!url.startsWith('data:')&&!(match[1]==='href'&&approvedLiveUrls.has(url)))errors.push(`${file}: unexpected external endpoint ${url}`);continue;}
+   const [route,hash]=url.split('#');const pathname=route.split('?')[0];let target=pathname.startsWith('/')?path.join(root,pathname):path.resolve(path.dirname(file),pathname||path.basename(file));
+   try{if((await stat(target)).isDirectory())target=path.join(target,'index.html');await stat(target);}catch{errors.push(`${file}: missing ${url}`);continue;}
+   if(hash&&!docs.get(target)?.ids.has(hash))errors.push(`${file}: broken anchor ${url}`);
+  }
  }
  for(const link of text.matchAll(/<a\b[^>]*href="(https:[^"]+)"[^>]*>/g)){
   if(!link[0].includes('target="_blank"')||!link[0].includes('rel="noopener noreferrer"'))errors.push(`${file}: live link must safely open in a new tab`);

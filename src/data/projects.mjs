@@ -81,7 +81,7 @@ export const projects = [
       'Layouts designed to adapt to desktop and mobile',
       'A local brief-preparation tool for the project-start page'
     ],
-    progress: 'The multi-page website is being developed and reviewed. Typography and interface details remain open to refinement. The site is not published, and the brief tool does not send an enquiry.'
+    progress: 'The studio website is being refined. This entry documents the design and build; the project brief tool does not send enquiries.'
   }
 ];
 

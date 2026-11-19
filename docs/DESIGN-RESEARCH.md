@@ -10,3 +10,9 @@ Reviewed 19 November 2026 through official public pages. Structural research, no
 
 Aldwyn’s distinguishing direction: dark editorial typography, the selected extended AL monogram, angular supporting geometry and a quieter portfolio that explains the work. No award, team-size, client-result or revenue claims. One honest project is sufficient initially; filters would add friction with one entry.
 
+
+## Editorial refinement — 19 November 2026
+
+The founder found the earlier result basic and generic. Retained the approved identity and homepage overlapping portfolio composition, then varied the page rhythms: photographic home opening; actual-work landscape card; open service rows; alternating portfolio image/text rows; one iris care panel; shorter practical copy. A licensed photograph supplies texture without representing an office, team or client. Its official source, licence and exact local files are in ASSET-SOURCES.md. No new competitor content or proprietary design assets were copied.
+
+Homepage, Services and Studio reuse one architectural study for a consistent material vocabulary; portfolio imagery is actual website work. Care uses native geometric SVG rather than a fabricated dashboard. Photography is optional decoration alongside the explicitly stated website offer. Typography, spacing and image treatments are review proposals within the locked aubergine/iris identity.
