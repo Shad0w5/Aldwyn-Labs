@@ -45,3 +45,14 @@ Founder visual acceptance, approved business contact route and real delivery/dat
 ## Original imagery refinement — 19 November 2026
 
 The founder requested brand-specific imagery and further integrated polish. Replaced the repeated architecture photo and care line illustration with three custom-generated material studies, matching the locked palette without changing the logo. A shared figure component serves responsive local WebP assets. Refined hero framing, captions, heading tracking, project-card depth and hover borders. Portfolio remains actual project screenshots; the brief remains practical and local-only. No publication or new service scope. Browser refresh was blocked by the cloud URL security policy, so this revision has source/asset checks but no fresh rendered-layout acceptance.
+
+
+## Wordmark, interior imagery and care package — 19 November 2026
+
+Founder requested larger Aldwyn Labs lettering beside AL, more appropriate images beyond headers and a more developed care package. Added logo-web.svg as a website-specific lockup: exact monogram and outlined letter paths preserved, Aldwyn scaled uniformly 1.4x and LABS 1.6x within the lockup. Original logo.svg remains unchanged. Header/footer use the new version; the compact monogram remains at the narrow breakpoint.
+
+Added a generated website-planning study inside Home and Studio process sections, actual project captures inside Services, and three native SVG illustrations explaining Care requests, updates and checks. Images support the adjacent content. Project status and local-only brief handling remain unchanged.
+
+Care now presents one Website Care package with a quote-after-review label, maintenance scope matrix, optional content allowance, support/recovery responsibilities, exclusions and an illustrated request workflow. No prices, hours, task cadence, response guarantee or cancellation terms invented.
+
+Nine-page build and static checks pass. XML checks confirm valid SVG, unchanged AL construction and identical letter outlines. Latest browser layout acceptance remains pending due to the previously encountered cloud URL security restriction; no new browser screenshot or full rendered-layout check is claimed. Review branch only; no deployment.

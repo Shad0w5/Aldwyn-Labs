@@ -21,3 +21,7 @@ The P.J. Sweeney and Carwales homepage screenshots were captured from the founde
 
 ## Brand and fonts
 Original supplied AL vectors and licensed Manrope/Inter files are retained unchanged. Font licences are in dist/assets/fonts/. No newly invented client logos, portraits, testimonials or results are used.
+
+
+## Website planning study
+Generated with the built-in image tool on 19 November 2026 for Home/Studio interior process sections. A staged overhead paper/pencil/page-outline illustration in the Aldwyn palette, not a client deliverable or office photo. Website encodings: dist/assets/brand-art/planning.webp (1200px) and planning-small.webp (640px). Exact prompt in BRAND-ART-PROMPTS.md. Care workflow SVGs are original code-native decorative illustrations; Services uses existing approved project captures.

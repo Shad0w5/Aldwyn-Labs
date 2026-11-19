@@ -16,3 +16,6 @@ The founder authorized portfolio entries and live previews for https://www.pjswe
 
 
 Current imagery update (19 November 2026): custom generated abstract artwork replaces the repeated architecture photograph. Assembly is used on Home, Composition on Services/Studio, and Continuity on Care. Use the responsive local WebP files in dist/assets/brand-art with src/brand-art.mjs. Keep real project screenshots on portfolio pages. The images are not a replacement logo or evidence of client work; prompts and provenance are in docs/BRAND-ART-PROMPTS.md and docs/ASSET-SOURCES.md.
+
+
+Website wordmark update: the founder requested larger lettering on 19 November 2026. Use dist/assets/logo-web.svg for the website horizontal lockup; original logo.svg is retained. AL construction is unchanged. In-page planning art and the illustrated Care workflow are now part of the review design. Care remains one scoped package with an optional content allowance and individually agreed pricing.

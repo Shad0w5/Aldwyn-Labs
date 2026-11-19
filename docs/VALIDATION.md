@@ -51,3 +51,14 @@ The founder's existing Render URL is separate from this isolated review branch. 
 ## Retained project-source observations
 
 The founder requested https://www.pjsweeney.ie/ and https://carwales.ie/ as portfolio entries. Both were captured at 1348 × 926 on 19 November 2026. Carwales returned X-Frame-Options: sameorigin; a real P.J. Sweeney iframe attempt refused to connect. The portfolio therefore uses dated screenshots and protected native new-tab links, with no remote iframe or bypass. Copy describes observable features and accurate status, without invented delivery roles or measured outcomes. Neither client site was modified.
+
+
+## Wordmark, interior imagery and care package — 19 November 2026
+
+Founder requested larger Aldwyn Labs lettering beside AL, more appropriate images beyond headers and a more developed care package. Added logo-web.svg as a website-specific lockup: exact monogram and outlined letter paths preserved, Aldwyn scaled uniformly 1.4x and LABS 1.6x within the lockup. Original logo.svg remains unchanged. Header/footer use the new version; the compact monogram remains at the narrow breakpoint.
+
+Added a generated website-planning study inside Home and Studio process sections, actual project captures inside Services, and three native SVG illustrations explaining Care requests, updates and checks. Images support the adjacent content. Project status and local-only brief handling remain unchanged.
+
+Care now presents one Website Care package with a quote-after-review label, maintenance scope matrix, optional content allowance, support/recovery responsibilities, exclusions and an illustrated request workflow. No prices, hours, task cadence, response guarantee or cancellation terms invented.
+
+Nine-page build and static checks pass. XML checks confirm valid SVG, unchanged AL construction and identical letter outlines. Latest browser layout acceptance remains pending due to the previously encountered cloud URL security restriction; no new browser screenshot or full rendered-layout check is claimed. Review branch only; no deployment.

@@ -20,7 +20,7 @@ async function cleanHtml(directory){
 }
 await mkdir('dist',{recursive:true});await cleanHtml('dist');
 const escape=s=>String(s).replaceAll('&','&amp;').replaceAll('"','&quot;').replaceAll('<','&lt;').replaceAll('>','&gt;');
-const logo=`<picture><source media="(max-width: 360px)" srcset="/assets/monogram.svg"><img src="/assets/logo.svg" width="1130" height="360" alt="Aldwyn Labs"></picture>`;
+const logo=`<picture><source media="(max-width: 360px)" srcset="/assets/monogram.svg"><img src="/assets/logo-web.svg" width="1100" height="360" alt="Aldwyn Labs"></picture>`;
 function navLink(page,label,url,key){return `<a href="${url}"${page.nav===key?' class="nav-active"':''}${page.path===url?' aria-current="page"':''}>${label}</a>`;}
 for(const page of pages){
  const html=`<!doctype html>
