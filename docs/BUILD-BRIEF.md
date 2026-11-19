@@ -67,3 +67,12 @@ Founder approved revising Services around three related groups: Design & build (
 Founder requested a complete site review and connected components before one final frontend change. Home now mirrors all three approved service groups; footer links use the current improvements wording. All nine main pages remain connected through the shared header/footer and contextual links. Added unchanged monogram favicon and a generated shared-shell 404 document with home/services recovery links. Removed superseded Studio crop overrides. Strengthened checks for home reachability, service/extra query values and CSS/font asset files. Updated handoff guidance. No contact backend, third-party accounts, launch, purchase or DNS change.
 
 Review build is ready for the founder’s remaining frontend request. Business contact destination/enquiry delivery, approved care commercials, domain/indexing and production fallback handling remain open launch tasks. Current implementation does not claim enquiry delivery.
+
+
+## Visitor-focused feedback revision — 19 November 2026
+
+Founder supplied a markup-based review and asked to improve the site. Accepted improvements: real-project hero while preserving the existing landscape portfolio card; more specific copy; direct one-person working relationship without a name/photo/bio; fuller project notes from existing facts; a shorter three-step local brief with optional personal details and a static blank-file fallback; mobile quick actions; restrained reduced-motion-aware process reveals; social asset and configurable public-origin metadata.
+
+Decisions: keep exact approved logo/palette, native controls and dependency-free static stack. One bounded care plan remains; no unapproved prices, tiers, timeframes or performance/client outcomes. No external contact/account setup or deployment. The domain is already purchased but its name remains unconfirmed. Render static-site cold-start criticism is inapplicable to static hosting (official Render static/free documentation checked). A professional-service schema, public indexing/sitemap, real policies and analytics are not guessed into the review build.
+
+Acceptance: build/check default and configured-origin paths; all six brief choices and care boundaries; validation, back/edit, copy/download; no horizontal page overflow at sampled widths; exact asset geometry; real portfolio status; honest launch dependencies. Next action: founder review, then confirm actual domain and a reachable inbox before implementing enquiry delivery and relevant data handling.

@@ -18,7 +18,11 @@ for(const [file,{text}] of docs){
   const raw=match[2].replaceAll('&amp;','&');
   const urls=match[1]==='srcset'?raw.split(',').map(item=>item.trim().split(/\s+/)[0]):[raw];
   for(const url of urls){
-   if(/^(?:https?:|data:|mailto:|tel:)/.test(url)){if(!url.startsWith('data:')&&!(match[1]==='href'&&approvedLiveUrls.has(url)))errors.push(`${file}: unexpected external endpoint ${url}`);continue;}
+   if(/^(?:https?:|data:|mailto:|tel:)/.test(url)){
+    const route=file===path.join(root,'index.html')?'/':'/'+path.relative(root,path.dirname(file)).split(path.sep).join('/')+'/';
+    const canonical=process.env.PUBLIC_SITE_URL && match[1]==='href' && text.includes(`<link rel="canonical" href="${raw}">`) && url===new URL(route,process.env.PUBLIC_SITE_URL).href;
+    if(!url.startsWith('data:')&&!canonical&&!(match[1]==='href'&&approvedLiveUrls.has(url)))errors.push(`${file}: unexpected external endpoint ${url}`);continue;
+   }
    const [route,hash]=url.split('#');const pathname=route.split('?')[0];let target=pathname.startsWith('/')?path.join(root,pathname):path.resolve(path.dirname(file),pathname||path.basename(file));
    try{if((await stat(target)).isDirectory())target=path.join(target,'index.html');await stat(target);}catch{errors.push(`${file}: missing ${url}`);continue;}
    if(hash&&!docs.get(target)?.ids.has(hash))errors.push(`${file}: broken anchor ${url}`);
@@ -29,6 +33,7 @@ for(const [file,{text}] of docs){
  }
  for(const frame of text.matchAll(/<iframe\b[^>]*>/g))if(/\ssrc=/.test(frame[0]))errors.push(`${file}: live frame must start without a remote src`);
 }
+try{await stat(path.join(root,'assets/social-card.jpg'));await stat(path.join(root,'assets/Aldwyn-Website-Brief.txt'));}catch{errors.push('Missing social card or blank brief fallback');}
 const start=await readFile(path.join(root,'start/index.html'),'utf8');
 // Catch stale service buttons and unconnected pages when the offer or routes change.
 const serviceValues=new Set([...start.matchAll(/<option value="([^"]+)"/g)].map(match=>match[1]));

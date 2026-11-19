@@ -23,12 +23,17 @@ await mkdir('dist',{recursive:true});await cleanHtml('dist');
 const escape=s=>String(s).replaceAll('&','&amp;').replaceAll('"','&quot;').replaceAll('<','&lt;').replaceAll('>','&gt;');
 const logo=`<picture><source media="(max-width: 360px)" srcset="/assets/monogram.svg"><img src="/assets/logo-web.svg" width="1100" height="360" alt="Aldwyn Labs"></picture>`;
 function navLink(page,label,url,key){return `<a href="${url}"${page.nav===key?' class="nav-active"':''}${page.path===url?' aria-current="page"':''}>${label}</a>`;}
+const publicOrigin=process.env.PUBLIC_SITE_URL ? new URL(process.env.PUBLIC_SITE_URL) : null;
+if(publicOrigin && (publicOrigin.protocol!=='https:' || publicOrigin.username || publicOrigin.password || publicOrigin.search || publicOrigin.hash || publicOrigin.pathname!=='/'))throw new Error('PUBLIC_SITE_URL must be an HTTPS origin with no path, query or credentials.');
 for(const page of pages){
+ const socialImage=publicOrigin ? new URL('/assets/social-card.jpg',publicOrigin).href : '/assets/social-card.jpg';
+ const canonical=publicOrigin && page!==notFound ? `<link rel="canonical" href="${escape(new URL(page.path,publicOrigin).href)}"><meta property="og:url" content="${escape(new URL(page.path,publicOrigin).href)}">` : '';
+ const quickActions=page.nav!=='start' && page!==notFound;
  const html=`<!doctype html>
-<html lang="en-IE"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#211729"><meta name="description" content="${escape(page.description)}"><meta name="robots" content="noindex, nofollow"><meta property="og:title" content="${escape(page.title)}"><meta property="og:description" content="${escape(page.description)}"><meta property="og:type" content="website"><title>${escape(page.title)}</title><link rel="preload" href="/assets/fonts/Manrope-Variable.ttf" as="font" type="font/ttf" crossorigin><link rel="preload" href="/assets/fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin><link rel="icon" href="/assets/monogram.svg" type="image/svg+xml"><link rel="stylesheet" href="/styles.css"><script src="/app.js" defer></script></head>
-<body><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="container header-inner"><a class="brand" href="/" aria-label="Aldwyn Labs home">${logo}</a><button class="menu-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navigation"><span>Menu</span><span class="menu-lines" aria-hidden="true"></span></button><nav id="navigation" aria-label="Main navigation">${navLink(page,'Services','/services/','services')}${navLink(page,'Portfolio','/portfolio/','portfolio')}${navLink(page,'Studio','/studio/','studio')}<a class="button button-small button-outline" href="/start/"${page.nav==='start'?' aria-current="page"':''}>Plan your website</a></nav></div></header>
+<html lang="en-IE"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#211729"><meta name="description" content="${escape(page.description)}"><meta name="robots" content="noindex, nofollow"><meta property="og:title" content="${escape(page.title)}"><meta property="og:description" content="${escape(page.description)}"><meta property="og:type" content="website"><meta property="og:site_name" content="Aldwyn Labs"><meta property="og:image" content="${escape(socialImage)}"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1363"><meta property="og:image:height" content="936"><meta property="og:image:alt" content="Aldwyn Labs — business website design and development in Ireland"><meta name="twitter:card" content="summary_large_image">${canonical}<title>${escape(page.title)}</title><link rel="preload" href="/assets/fonts/Manrope-Variable.ttf" as="font" type="font/ttf" crossorigin><link rel="preload" href="/assets/fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin><link rel="icon" href="/assets/monogram.svg" type="image/svg+xml"><link rel="stylesheet" href="/styles.css"><script src="/app.js" defer></script></head>
+<body${quickActions?' class="has-mobile-actions"':''}><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="container header-inner"><a class="brand" href="/" aria-label="Aldwyn Labs home">${logo}</a><button class="menu-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navigation"><span>Menu</span><span class="menu-lines" aria-hidden="true"></span></button><nav id="navigation" aria-label="Main navigation">${navLink(page,'Services','/services/','services')}${navLink(page,'Portfolio','/portfolio/','portfolio')}${navLink(page,'Studio','/studio/','studio')}<a class="button button-small button-outline" href="/start/"${page.nav==='start'?' aria-current="page"':''}>Start a project</a></nav></div></header>
 <main id="main" tabindex="-1">${page.body}</main>
-<footer class="site-footer"><div class="container"><div class="footer-main"><div><a class="brand" href="/" aria-label="Aldwyn Labs home">${logo}</a><p>Business websites, designed and built in Ireland. Optional care when you need a hand.</p></div><nav class="footer-nav" aria-label="Footer navigation"><a href="/services/">Website design</a><a href="/portfolio/">Our work</a><a href="/website-care/">Website care</a><a href="/studio/">The studio</a><a href="/services/#website-extras">Website improvements</a><a href="/start/">Plan your website</a></nav></div><div class="footer-bottom"><p>© <span id="year">2026</span> Aldwyn Labs</p><p>Good design. Clear purpose.</p></div></div></footer></body></html>`;
+<footer class="site-footer"><div class="container"><div class="footer-main"><div><a class="brand" href="/" aria-label="Aldwyn Labs home">${logo}</a><p>Business websites, designed and built in Ireland. Optional care when you need a hand.</p></div><nav class="footer-nav" aria-label="Footer navigation"><a href="/services/">Website design</a><a href="/portfolio/">Our work</a><a href="/website-care/">Website care</a><a href="/studio/">The studio</a><a href="/services/#website-extras">Website improvements</a><a href="/start/">Plan your website</a></nav></div><div class="footer-bottom"><p>© <span id="year">2026</span> Aldwyn Labs</p><p>Independent web studio · Ireland</p></div></div></footer>${quickActions?'<nav class="mobile-actions" aria-label="Quick actions"><a href="/portfolio/">See the work</a><a class="button button-primary" href="/start/">Prepare a brief</a></nav>':''}</body></html>`;
  const target=page===notFound?'dist/404.html':path.join('dist',page.path,'index.html');
  await mkdir(path.dirname(target),{recursive:true}); await writeFile(target,html);
 }
@@ -37,3 +42,23 @@ for(const file of ['services.css','portfolio.css']){try{css+='\n'+await readFile
 await writeFile('dist/styles.css',css);await copyFile('src/app.js','dist/app.js');
 console.log(`Built ${pages.length-1} pages and a 404 fallback with shared navigation and local assets.`);
 
+
+await writeFile('dist/assets/Aldwyn-Website-Brief.txt', `ALDWYN LABS — WEBSITE BRIEF
+
+This is a blank template for your own notes. It does not send an enquiry.
+
+What kind of help do you need?
+New website / Redesign / Landing page / Improvements / Care / Guidance
+
+What should the website help people find or do?
+
+
+Optional context
+Business name:
+Existing website:
+Useful additions or changes:
+Your name and contact details (only if you want them in your copy):
+
+Keep passwords and sensitive customer information out of this file.
+Project details and costs are discussed separately.
+`);

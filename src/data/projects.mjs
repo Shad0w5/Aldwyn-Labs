@@ -22,6 +22,11 @@ export const projects = [
     briefLabel: 'The website',
     briefHeading: 'Legal services, clearly presented.',
     brief: 'The current site introduces Patrick J. Sweeney Solicitors and presents its practice areas alongside information about the firm, its team and ways to request an appointment.',
+    notes: [
+      {title:'Understand the practice',text:'Practice-area information gives visitors a way to find the legal service relevant to their enquiry.'},
+      {title:'Find the people and context',text:'About and team pages sit alongside the service information, so the website can introduce the practice as well as its work.'},
+      {title:'Take the next step',text:'Contact details and an appointment request route give visitors a way to follow up after reading.'}
+    ],
     decisions: [],
     scopeLabel: 'Website overview',
     scopeHeading: 'Explore the live site.',
@@ -45,6 +50,11 @@ export const projects = [
     briefLabel: 'The website',
     briefHeading: 'A catalogue and a showroom.',
     brief: 'The live website brings car equipment and vehicle listings into separate browsing areas. Visitors can explore categories, search the catalogue and follow enquiry routes.',
+    notes: [
+      {title:'Two ways to browse',text:'Car equipment and vehicle listings have different browsing needs. The website gives the catalogue and showroom their own routes.'},
+      {title:'Find a product or category',text:'Catalogue search and car-electronics categories help visitors explore the range before asking about an item.'},
+      {title:'Ask about availability',text:'Enquiry routes support questions about products and vehicles. This project remains in progress; the live link shows the current build.'}
+    ],
     decisions: [],
     scopeLabel: 'Website overview',
     scopeHeading: 'Explore the current build.',
@@ -61,6 +71,11 @@ export const projects = [
     summary: 'A considered home for an independent digital studio. Built around a distinctive identity, clear services and room for work to grow.',
     disciplines: ['Website design', 'Front-end development', 'Portfolio structure'],
     brief: 'Create a website for Aldwyn Labs that makes the offer easy to understand: business websites, with optional website care. Give the studio a clear visual voice and a dedicated place to share projects as they develop.',
+    notes: [
+      {title:'A small static build',text:'HTML, CSS and browser JavaScript are assembled by a dependency-free Node.js generator. Shared navigation and portfolio data keep the pages consistent.'},
+      {title:'A useful pre-launch tool',text:'The brief builder prepares a local text copy with optional business details. It does not send an enquiry or store answers online.'},
+      {title:'Checks before release',text:'Build checks cover page links, anchors, local assets and service routes. Browser review samples desktop and narrow layouts; live contact delivery remains a launch task.'}
+    ],
     decisions: [
       {
         title: 'An identity that holds together.',

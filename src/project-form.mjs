@@ -1,29 +1,22 @@
 export default `<form id="project-form" class="project-form">
-  <div class="form-row">
-    <div class="field"><label for="name">Your name</label><input id="name" name="name" autocomplete="name" maxlength="120" required></div>
-    <div class="field"><label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" maxlength="254" required></div>
-  </div>
-  <div class="field"><label for="business">Business name <span>(optional)</span></label><input id="business" name="business" autocomplete="organization" maxlength="180"></div>
-  <div class="field"><label for="website">Existing website <span>(optional)</span></label><input id="website" name="website" type="url" placeholder="https://yourwebsite.ie" autocomplete="url" maxlength="2048" aria-describedby="website-help"><p id="website-help" class="field-help">Useful for a redesign, website improvements or care. Include https:// or http://.</p></div>
-  <div class="field"><label for="project-type">What are you thinking of?</label><select id="project-type" name="projectType" aria-describedby="service-choice-note">
-    <option value="new">A new business website</option>
-    <option value="redesign">A redesign of an existing website</option>
-    <option value="landing">A landing page</option>
-    <option value="improvements">Improvements to an existing website</option>
-    <option value="care">Website care</option>
-    <option value="guidance">I’d like some guidance</option>
-  </select><p id="service-choice-note" class="field-help">Choose a starting point. The scope and costs are agreed separately.</p></div>
-  <fieldset class="brief-extras" id="brief-extras"><legend>Optional website extras</legend><p class="field-help">Select anything you’d like to discuss. These are not automatically included.</p>
-    <div class="brief-choices">
-      <label class="brief-choice"><input type="checkbox" name="extras" value="pages"><span>Additional pages</span></label>
-      <label class="brief-choice"><input type="checkbox" name="extras" value="showcase"><span>Project or product showcase</span></label>
-      <label class="brief-choice"><input type="checkbox" name="extras" value="connection"><span>Existing booking or enquiry tool</span></label>
-      <label class="brief-choice"><input type="checkbox" name="extras" value="migration"><span>Content move &amp; redirects</span></label>
-    </div>
+  <div class="brief-progress" id="brief-progress" hidden><p id="brief-step-status" aria-live="polite">Step 1 of 3 · Your website</p><progress id="brief-progress-value" value="1" max="3" aria-label="Brief progress"></progress><ol><li aria-current="step">Your website</li><li>Optional details</li><li>Review &amp; save</li></ol></div>
+  <fieldset class="brief-step" data-step="0"><legend id="brief-goal-title" tabindex="-1">What do you have in mind?</legend><p class="field-help brief-step-intro">Two questions to start. You can add more detail on the next step.</p>
+    <div class="field"><label for="project-type">What are you thinking of?</label><select id="project-type" name="projectType" aria-describedby="service-choice-note">
+      <option value="new">A new business website</option><option value="redesign">A redesign of an existing website</option><option value="landing">A landing page</option><option value="improvements">Improvements to an existing website</option><option value="care">Website care</option><option value="guidance">I’d like some guidance</option>
+    </select><p id="service-choice-note" class="field-help">Choose a starting point. We can work out the details later.</p></div>
+    <div class="field"><label for="message">What should your website help people do?</label><textarea id="message" name="message" rows="5" minlength="20" maxlength="4000" required aria-describedby="message-help" placeholder="For example: explain our services, show our work and make it easy to ask for a quote."></textarea><p id="message-help" class="field-help">At least 20 characters. Leave out passwords and sensitive customer information.</p></div>
+    <button class="button button-primary" id="brief-next" type="button" hidden>Continue to optional details</button>
   </fieldset>
-  <div class="field"><label for="message">Tell us a little about it</label><textarea id="message" name="message" rows="5" minlength="20" maxlength="4000" required aria-describedby="message-help"></textarea><p id="message-help" class="field-help">At least 20 characters. Please leave out passwords and sensitive customer information.</p></div>
-  <noscript><p class="field-help">Please enable JavaScript to prepare a brief. This form cannot send your information.</p></noscript>
-  <button class="button button-primary" type="submit" disabled>Prepare my brief</button>
+  <fieldset class="brief-step" data-step="1"><legend id="brief-details-title" tabindex="-1">A little context, if you have it.</legend><p class="field-help brief-step-intro">Everything on this step is optional. You can go straight to your copy.</p>
+    <div class="field"><label for="business">Business name <span>(optional)</span></label><input id="business" name="business" autocomplete="organization" maxlength="180"></div>
+    <div class="field"><label for="website">Existing website <span>(optional)</span></label><input id="website" name="website" type="url" placeholder="https://yourwebsite.ie" autocomplete="url" maxlength="2048" aria-describedby="website-help"><p id="website-help" class="field-help">Useful for a redesign, improvements or care. Include https:// or http://.</p></div>
+    <fieldset class="brief-extras" id="brief-extras"><legend>Anything else to discuss?</legend><p class="field-help">Optional additions. Selecting one does not add it to a package.</p><div class="brief-choices">
+      <label class="brief-choice"><input type="checkbox" name="extras" value="pages"><span>Additional pages</span></label><label class="brief-choice"><input type="checkbox" name="extras" value="showcase"><span>Project or product showcase</span></label><label class="brief-choice"><input type="checkbox" name="extras" value="connection"><span>Existing booking or enquiry tool</span></label><label class="brief-choice"><input type="checkbox" name="extras" value="migration"><span>Content move &amp; redirects</span></label>
+    </div></fieldset>
+    <details class="brief-contact-details"><summary>Add your details to the saved copy <span>(optional)</span></summary><p class="field-help">These stay in your browser and downloaded file. They are not sent to Aldwyn.</p><div class="form-row"><div class="field"><label for="name">Your name <span>(optional)</span></label><input id="name" name="name" autocomplete="name" maxlength="120"></div><div class="field"><label for="email">Email address <span>(optional)</span></label><input id="email" name="email" type="email" autocomplete="email" maxlength="254"></div></div></details>
+    <p class="field-help action-note">Prepare a copy for yourself. This does not send an enquiry.</p><div class="brief-step-actions"><button class="button button-outline" id="brief-back" type="button" hidden>Back</button><button class="button button-primary" type="submit" disabled>Review my brief</button></div>
+  </fieldset>
+  <noscript><p class="field-help">The guided tool needs JavaScript. You can <a class="text-link" href="/assets/Aldwyn-Website-Brief.txt" download>download the blank brief</a> and fill it in offline instead.</p></noscript>
   <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
-  <div id="brief-result" class="brief-result" hidden><label for="brief-text">Your prepared brief</label><textarea id="brief-text" readonly rows="12"></textarea><div class="result-actions"><button class="button button-primary" id="download-brief" type="button">Save brief as a file</button><button class="button button-outline" id="copy-brief" type="button">Copy brief</button></div></div>
+  <div id="brief-result" class="brief-result" hidden><h2 id="brief-review-title" tabindex="-1">Your brief, ready to keep.</h2><p class="field-help">Nothing has been sent. Save or copy this for a future project conversation.</p><label for="brief-text">Your prepared brief</label><textarea id="brief-text" readonly rows="12"></textarea><div class="result-actions"><button class="button button-primary" id="download-brief" type="button">Save brief as a file</button><button class="button button-outline" id="copy-brief" type="button">Copy brief</button><button class="button button-outline" id="brief-edit" type="button">Edit answers</button></div></div>
 </form>`;

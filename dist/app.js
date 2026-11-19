@@ -27,6 +27,39 @@ const result = document.querySelector('#brief-result');
 const briefText = document.querySelector('#brief-text');
 const projectType = form.elements.projectType;
 const extraFields = document.querySelector('#brief-extras');
+const steps = Array.from(form.querySelectorAll('.brief-step'));
+const progress = document.querySelector('#brief-progress');
+const progressValue = document.querySelector('#brief-progress-value');
+const stepStatus = document.querySelector('#brief-step-status');
+const stepNames = ['Your website', 'Optional details', 'Review & save'];
+let activeStep = 0;
+function showStep(index, focus = true) {
+  activeStep = index;
+  steps.forEach((step, i) => { step.hidden = i !== index; });
+  result.hidden = index !== 2;
+  progressValue.value = index + 1;
+  stepStatus.textContent = `Step ${index + 1} of 3 · ${stepNames[index]}`;
+  progress.querySelectorAll('li').forEach((item, i) => {
+    if (i === index) item.setAttribute('aria-current', 'step');
+    else item.removeAttribute('aria-current');
+  });
+  if (focus) {
+    document.querySelector(index === 0 ? '#brief-goal-title' : index === 1 ? '#brief-details-title' : '#brief-review-title').focus({preventScroll:true});
+    progress.scrollIntoView({block:'start',behavior:'instant'});
+  }
+}
+function checkFields(container) {
+  form.elements.message.setCustomValidity(form.elements.message.value.trim().length < 20 ? 'Add at least 20 characters about your website.' : '');
+  const invalid = Array.from(container.querySelectorAll('input,select,textarea')).find(field => !field.disabled && !field.checkValidity());
+  if (!invalid) return true;
+  const step = invalid.closest('.brief-step');
+  if (step) showStep(Number(step.dataset.step), false);
+  const details = invalid.closest('details');
+  if (details) details.open = true;
+  invalid.reportValidity(); invalid.focus();
+  return false;
+}
+
 const extras = {
   pages: 'Additional pages',
   showcase: 'Project or product showcase',
@@ -45,33 +78,36 @@ function updateServiceFields() {
   extraFields.hidden = care;
   extraFields.disabled = care;
   document.querySelector('#service-choice-note').textContent = care
-    ? 'For care, describe the help you need and the platform if you know it. Tasks, allowance and support terms are agreed for your website.'
-    : 'Choose a starting point. The scope and costs are agreed separately.';
+    ? 'For care, tell us what needs updating or looking after. Add the website address on the next step if you have it.'
+    : 'Choose a starting point. We can work out the details later.';
 }
 updateServiceFields();
 projectType.addEventListener('change', updateServiceFields);
+form.elements.message.addEventListener('input', () => form.elements.message.setCustomValidity(''));
 function setStatus(message, error = false) { status.textContent = message; status.classList.toggle('is-error', error); }
 form.addEventListener('submit', event => {
   event.preventDefault();
+  if (activeStep === 0) { if (checkFields(steps[0])) showStep(1); return; }
+  if (!checkFields(form)) return;
   const data = new FormData(form);
   const name = String(data.get('name')).trim();
   const email = String(data.get('email')).trim();
   const message = String(data.get('message')).trim();
-  if (!name || message.length < 20) {
+  if (message.length < 20) {
     result.hidden = true;
-    setStatus('Please add your name and at least 20 characters about your project.', true);
-    document.querySelector(!name ? '#name' : '#message').focus();
+    showStep(0, false);
+    setStatus('Please add at least 20 characters about your project.', true);
+    document.querySelector('#message').focus();
     return;
   }
   const selectedExtras = data.getAll('extras').filter(value => Object.hasOwn(extras, value)).map(value => extras[value]);
-  briefText.value = ['ALDWYN LABS — PROJECT BRIEF', '', `Name: ${name}`, `Email: ${email}`, `Business: ${String(data.get('business')).trim() || 'Not provided'}`, `Existing website: ${String(data.get('website') || '').trim() || 'Not provided'}`, `Project: ${projectType.selectedOptions[0].textContent}`, ...(projectType.value === 'care' ? [] : [`Optional extras to discuss: ${selectedExtras.join(', ') || 'None selected'}`]), '', 'What I have in mind:', message, '', 'Scope and costs are subject to agreement.', 'Prepared locally. This brief has not been sent to Aldwyn Labs.'].join('\n');
-  result.hidden = false;
+  briefText.value = ['ALDWYN LABS — PROJECT BRIEF', '', `Name: ${name || 'Not provided'}`, `Email: ${email || 'Not provided'}`, `Business: ${String(data.get('business')).trim() || 'Not provided'}`, `Existing website: ${String(data.get('website') || '').trim() || 'Not provided'}`, `Project: ${projectType.selectedOptions[0].textContent}`, ...(projectType.value === 'care' ? [] : [`Optional extras to discuss: ${selectedExtras.join(', ') || 'None selected'}`]), '', 'What I have in mind:', message, '', 'Scope and costs are subject to agreement.', 'Prepared locally. This brief has not been sent to Aldwyn Labs.'].join('\n');
+  showStep(2);
   setStatus('Your brief is ready. Save or copy it below. Nothing has been sent.');
-  briefText.focus();
 });
 form.addEventListener('input', event => {
   if (event.target !== briefText && !result.hidden) {
-    result.hidden = true;
+    showStep(0, false);
     briefText.value = '';
     setStatus('Your details changed. Prepare the brief again to include your updates.');
   }
@@ -97,6 +133,16 @@ document.querySelector('#copy-brief').addEventListener('click', async () => {
   }
 });
 
+document.querySelector('#brief-next').addEventListener('click', () => {
+  if (checkFields(steps[0])) { setStatus(''); showStep(1); }
+});
+document.querySelector('#brief-back').addEventListener('click', () => { setStatus(''); showStep(0); });
+document.querySelector('#brief-edit').addEventListener('click', () => { briefText.value = ''; setStatus(''); showStep(0); });
+form.noValidate = true;
+progress.hidden = false;
+document.querySelector('#brief-next').hidden = false;
+document.querySelector('#brief-back').hidden = false;
+showStep(0, false);
 form.querySelector('button[type="submit"]').disabled = false;
 }
 
@@ -115,3 +161,11 @@ function openLinkedDetails() {
 openLinkedDetails();
 window.addEventListener('hashchange', openLinkedDetails);
 
+
+// Reveal process steps as they enter view; reduced-motion users see them immediately.
+if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target); } });
+  }, { threshold: .08 });
+  document.querySelectorAll('.studio-process-list li,.home-capability-row').forEach(element => { element.classList.add('enter-view'); observer.observe(element); });
+}

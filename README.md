@@ -69,3 +69,16 @@ Website wordmark update: the founder requested larger lettering on 19 November 2
 The homepage, Services and footer share the three-part offer: design/build, improvements and optional care. Nine main routes plus a generated `dist/404.html` fallback use one header/footer and the existing monogram favicon. The 404 document was visually checked directly; the production host must still be checked for missing-URL status and fallback handling after an authorized deployment. Canonical URLs, sitemap and live indexing wait for a confirmed domain and launch. All review documents retain noindex.
 
 The brief builder is functional for preparation, copy and download only. Confirm a real business destination and data handling before implementing enquiry delivery. Do not treat it as a working contact submission. See the latest validation checkpoint for actual browser checks, remaining launch dependencies and the next frontend review.
+
+
+## Feedback revision — 19 November 2026
+
+The homepage now features a real project, specific benefit-led copy and a pre-launch enquiry notice. The original overlapping landscape portfolio card is retained. Studio explains the one-person working relationship. Client project notes describe verified site features; delivery roles, technologies and outcome metrics are not invented. The Aldwyn project documents the actual static stack.
+
+The brief is progressively enhanced into three steps: goal, optional details, review/save. Only the project description is required; name/email are optional and collapsed. Care still disables extras. A blank `/assets/Aldwyn-Website-Brief.txt` is generated for an offline/no-JavaScript fallback. This remains local preparation, not enquiry delivery. Mobile quick actions are omitted on Start and 404 to avoid covering the form. Small process reveals respect reduced motion.
+
+`src/social-card.html` is the editable share-card layout. Its browser capture is `dist/assets/social-card.jpg` (1363 × 936). The important content is centred for social crops. To regenerate, temporarily copy the source into dist for managed browser review and capture the viewport; remove the temporary preview before rebuilding. The 1200 × 630 clipped capture API timed out, so the saved export retains its actual dimensions. Re-test platform crops against the public URL before launch.
+
+Builds can take `PUBLIC_SITE_URL` as an HTTPS origin once the actual domain is confirmed. It supplies absolute canonical/og:url/share-image URLs; without it, canonical/og:url are omitted and the image path is local for review. A synthetic `https://example.com` configuration was tested and removed; it is not a business domain. Indexing remains disabled regardless of that variable. Configure real origin and launch indexing separately, then test social previews. No domain, inbox, phone, booking service, analytics, legal details or pricing was invented.
+
+Current evidence is docs/images/feedback-home-2026-11-19.jpg. See the latest VALIDATION section for browser limitations, including the final refresh that stopped initialising scripts.
