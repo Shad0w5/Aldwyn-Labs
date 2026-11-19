@@ -1,5 +1,11 @@
 # Validation — 19 November 2026
 
+## Homepage portfolio card refinement
+
+Replaced the two homepage project cards with one landscape portfolio card. The two actual website screenshots overlap on the left; portfolio introduction, project names/status and a single “Explore our portfolio” link sit on the right. The card stacks vertically at narrower CSS breakpoints. Individual project pages and live-preview links remain on the portfolio page.
+
+`npm run build` and `npm run check` passed for nine pages after the change. Source layout and responsive rules were self-reviewed. Fresh visual/browser verification was blocked: the existing cloud tab timed out at Page.enable, tab inventory timed out, and a fresh tab attempt also timed out. No new screenshot or successful browser-layout check is claimed for this card. Earlier browser checks below refer to their respective earlier revisions.
+
 ## Services and care refinement
 
 - `npm run build` and `npm run check` pass for nine pages. The link checker now resolves query-bearing local routes and HTML-encoded query separators before checking paths/anchors.

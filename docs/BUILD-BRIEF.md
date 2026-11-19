@@ -1,5 +1,9 @@
 # Multi-page studio website
 
+## Homepage portfolio composition — 19 November 2026
+
+The founder supplied a screenshot of the two adjacent homepage project cards and asked for the website previews to overlap in one landscape card, accompanied by portfolio information and “Explore our portfolio”. Implemented that bounded change using the existing project data, actual screenshots and selected brand colours. The single link opens the portfolio listing; individual project details and external live-preview links remain there. No publication or business-offer change is involved. Browser verification was blocked by a cloud-browser timeout; see VALIDATION.md.
+
 ## Services and care refinement — 19 November 2026
 
 The founder requested clearer Services, Website Care and related additions. Updated the two pages and homepage summaries within the existing website offer. New-site and redesign paths lead to a local brief, and optional website extras cover additional pages, project/product showcases, existing booking/enquiry connections and content moves/redirects. These are assessed and scoped before a quote; no custom booking system, checkout, marketing campaign or IT-support service is introduced.
