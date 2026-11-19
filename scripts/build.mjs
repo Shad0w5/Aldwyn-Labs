@@ -34,3 +34,4 @@ let css=await readFile('src/base.css','utf8')+'\n'+await readFile('src/site.css'
 for(const file of ['services.css','portfolio.css']){try{css+='\n'+await readFile(`src/pages/${file}`,'utf8');}catch(e){if(e.code!=='ENOENT')throw e;}}
 await writeFile('dist/styles.css',css);await copyFile('src/app.js','dist/app.js');
 console.log(`Built ${pages.length} pages with shared navigation and local assets.`);
+

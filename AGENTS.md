@@ -11,3 +11,4 @@ The project form prepares a brief locally. Never send fields through GET or a re
 Run `npm run build` and `npm run check` after source changes. Verify internal links and assets. Use the supported Work preview for desktop and mobile checks when available. Record limitations honestly in docs/VALIDATION.md. Read docs/BUILD-BRIEF.md and docs/DESIGN-RESEARCH.md for scope and rationale. Keep changes on a review branch until approved.
 
 The founder authorised portfolio entries and live previews for https://www.pjsweeney.ie/ and https://carwales.ie/ on 19 November 2026. Use the supplied actual homepage captures and safe native new-tab links. Both sites block embedded frames; do not proxy or bypass that restriction. Carwales stays in progress until final acceptance is confirmed. Keep client-specific implementation in its own repository/chat.
+

@@ -25,6 +25,31 @@ if (form) {
 const status = document.querySelector('#form-status');
 const result = document.querySelector('#brief-result');
 const briefText = document.querySelector('#brief-text');
+const projectType = form.elements.projectType;
+const extraFields = document.querySelector('#brief-extras');
+const extras = {
+  pages: 'Additional pages',
+  showcase: 'Project or product showcase',
+  connection: 'Existing booking or enquiry tool',
+  migration: 'Content move & redirects'
+};
+// Only known options can be carried over from the services and care pages.
+const params = new URLSearchParams(location.search);
+const requestedService = params.get('service');
+if (['new', 'redesign', 'care', 'guidance'].includes(requestedService)) projectType.value = requestedService;
+for (const extra of params.getAll('extra')) {
+  if (Object.hasOwn(extras, extra)) form.querySelector(`input[name="extras"][value="${extra}"]`).checked = true;
+}
+function updateServiceFields() {
+  const care = projectType.value === 'care';
+  extraFields.hidden = care;
+  extraFields.disabled = care;
+  document.querySelector('#service-choice-note').textContent = care
+    ? 'For care, describe the help you need and the platform if you know it. Tasks, allowance and support terms are agreed for your website.'
+    : 'Choose a starting point. The scope and costs are agreed separately.';
+}
+updateServiceFields();
+projectType.addEventListener('change', updateServiceFields);
 function setStatus(message, error = false) { status.textContent = message; status.classList.toggle('is-error', error); }
 form.addEventListener('submit', event => {
   event.preventDefault();
@@ -38,7 +63,8 @@ form.addEventListener('submit', event => {
     document.querySelector(!name ? '#name' : '#message').focus();
     return;
   }
-  briefText.value = ['ALDWYN LABS — PROJECT BRIEF', '', `Name: ${name}`, `Email: ${email}`, `Business: ${String(data.get('business')).trim() || 'Not provided'}`, `Project: ${data.get('projectType')}`, '', 'What I have in mind:', message, '', 'Prepared locally. This brief has not been sent to Aldwyn Labs.'].join('\n');
+  const selectedExtras = data.getAll('extras').filter(value => Object.hasOwn(extras, value)).map(value => extras[value]);
+  briefText.value = ['ALDWYN LABS — PROJECT BRIEF', '', `Name: ${name}`, `Email: ${email}`, `Business: ${String(data.get('business')).trim() || 'Not provided'}`, `Existing website: ${String(data.get('website') || '').trim() || 'Not provided'}`, `Project: ${projectType.selectedOptions[0].textContent}`, ...(projectType.value === 'care' ? [] : [`Optional extras to discuss: ${selectedExtras.join(', ') || 'None selected'}`]), '', 'What I have in mind:', message, '', 'Scope and costs are subject to agreement.', 'Prepared locally. This brief has not been sent to Aldwyn Labs.'].join('\n');
   result.hidden = false;
   setStatus('Your brief is ready. Save or copy it below. Nothing has been sent.');
   briefText.focus();
@@ -88,3 +114,4 @@ function openLinkedDetails() {
 }
 openLinkedDetails();
 window.addEventListener('hashchange', openLinkedDetails);
+

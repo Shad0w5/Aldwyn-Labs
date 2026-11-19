@@ -1,5 +1,15 @@
 # Multi-page studio website
 
+## Services and care refinement — 19 November 2026
+
+The founder requested clearer Services, Website Care and related additions. Updated the two pages and homepage summaries within the existing website offer. New-site and redesign paths lead to a local brief, and optional website extras cover additional pages, project/product showcases, existing booking/enquiry connections and content moves/redirects. These are assessed and scoped before a quote; no custom booking system, checkout, marketing campaign or IT-support service is introduced.
+
+Care is presented as one flexible optional monthly plan, with a separately defined content allowance if chosen. Examples explain small content changes versus separately scoped work. The plan describes how maintenance, backups/restore checks, monitoring, support, costs, ownership and exit arrangements must be agreed for the actual website. Fees, task cadence, allowances, response hours/targets and cancellation notice remain undecided. This content does not approve commercial terms or spending.
+
+The local brief tool now has four correctly formed service options, an optional existing website address, and optional-extra checkboxes. Known service/extra query values can preselect the form from page buttons; unknown values are ignored. Care hides/disables website extras. Output is plain text held in page memory and can be copied/downloaded. It is not sent to Aldwyn.
+
+Acceptance for this refinement: existing routes and anchors resolve with query strings, care and extra links preserve intent, all four options are selectable, care omits irrelevant extras, stale output is cleared, URL input validates, and desktop/narrow layouts retain readable controls. Verification is recorded in VALIDATION.md. No new dependencies, publishing, DNS, purchases or client-site changes.
+
 19 November 2026. Build request: expand the merged first template into a complete multi-page review build, with a dedicated portfolio for ongoing projects. Keep the selected AL logo and aubergine/iris identity. Publishing, DNS and purchases are excluded.
 
 ## Visitors and pages
@@ -28,3 +38,4 @@ Exact domain, hosting/destination, approved email/phone, enquiry delivery and da
 ## Portfolio extension — 19 November 2026
 
 Add actual screenshots and individual pages for the two founder-supplied sites. Describe observable website features rather than inventing project briefs, design roles, technologies, results or testimonials. Native live-preview links open the websites in separate tabs because both sites block embedded framing. Exact URLs and source observations are recorded in README and VALIDATION. Aldwyn remains unpublished; no client website was modified.
+

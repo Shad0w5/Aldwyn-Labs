@@ -9,3 +9,4 @@ Reviewed 19 November 2026 through official public pages. Structural research, no
 | [UWRH Digital portfolio](https://uwrhdigital.com/our-work/) | Separates client projects from concepts with visible project labels | Show actual context and status on every Aldwyn entry, including our self-initiated website in progress |
 
 Aldwyn’s distinguishing direction: dark editorial typography, the selected extended AL monogram, angular supporting geometry and a quieter portfolio that explains the work. No award, team-size, client-result or revenue claims. One honest project is sufficient initially; filters would add friction with one entry.
+

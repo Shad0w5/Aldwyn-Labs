@@ -84,3 +84,4 @@ export const projects = [
     progress: 'The multi-page website is being developed and reviewed. Typography and interface details remain open to refinement. The site is not published, and the brief tool does not send an enquiry.'
   }
 ];
+

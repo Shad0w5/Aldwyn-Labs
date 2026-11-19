@@ -1,5 +1,14 @@
 # Validation — 19 November 2026
 
+## Services and care refinement
+
+- `npm run build` and `npm run check` pass for nine pages. The link checker now resolves query-bearing local routes and HTML-encoded query separators before checking paths/anchors.
+- Separate implementation and content/UX critic agents reviewed the work. Fixed a pre-existing malformed service selector (care and guidance were missing opening option tags) and removed wording that could imply marketing campaigns or checkout were currently available as extra services.
+- Desktop Services and Care inspected at 1363px viewport width; no horizontal overflow. Actual new-site/showcase and care buttons navigated to the local brief with the expected selection. All four native select options appeared correctly. Extra checkboxes and the optional existing website address were visible and labelled.
+- Synthetic review@example.com flow: new-site brief contained the selected showcase and existing URL; clipboard copy included them; changing to care invalidated old output, hid and disabled extras, and generated a care brief without extras. Download event succeeded. Invalid URL was rejected natively. Unknown service and extra query values were ignored.
+- Services, Care, care brief and showcase brief were checked in same-origin browser frames at 390/320/768px outer widths (375/305/753px content widths). All twelve checks had scrollWidth equal to clientWidth. Care preselection and showcase checkbox selection remained correct at each width. Mobile menu closed with Escape; native care FAQ could be expanded with the keyboard.
+- Checks remain Chromium browser/frame checks, not physical-device or full cross-browser certification. No real enquiry delivery, service purchase, contact transmission or production publication occurred. Final fees, allowances, task frequencies and response/cancellation terms are still open.
+
 ## Automated checks
 - `npm run build`: seven pages generated with shared chrome and page metadata.
 - `npm run check`: JavaScript syntax; unique IDs; one H1 per page; description/title/noindex presence; all local assets, route links and cross-page anchors resolve; HTML submit initially disabled; no form action/GET delivery; no fetch, beacon, XHR or application browser-storage APIs in the site script.
@@ -27,3 +36,4 @@ Both sites prevent cross-origin embedded display. Carwales returned X-Frame-Opti
 `npm run build` and `npm run check` pass for nine pages. The checker permits only the two intended external link destinations, still disallows remote assets/other endpoints and checks new-tab protections. Actual preview images loaded. Desktop Carwales project-detail width was 1363px with no horizontal overflow. Portfolio listing, both new detail pages and the updated Home were checked in a 320px outer iframe / 305px inner content width; all had scrollWidth equal to clientWidth. The temporary QA harness was removed from the final build.
 
 A separate critic checked the additions: no consequential defect found. Corrected the screenshot dimensions in markup and CSS to their actual 1348 × 926 ratio and updated the page-count documentation. Screenshots are dated snapshots and need recapturing when client sites change. This remains an unpublished review build.
+

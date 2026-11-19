@@ -93,3 +93,4 @@ const detailPages = projects.map(project => ({
 }));
 
 export default [listing, ...detailPages];
+

@@ -29,7 +29,7 @@ In ChatGPT Work, use `sites-preview start /workspace/sites/aldwyn-labs` and the 
 | `/studio/` | `src/pages/main.mjs` |
 | `/start/` | `src/pages/main.mjs` and `src/project-form.mjs` |
 
-Shared behavior: `src/app.js`. Styling: `src/base.css`, `src/site.css` and `src/pages/portfolio.css`. Shared shell: `scripts/build.mjs`. Exact brand assets and font licences: `dist/assets/`.
+Shared behavior: `src/app.js`. Styling: `src/base.css`, `src/site.css`, `src/pages/services.css` and `src/pages/portfolio.css`. Shared shell: `scripts/build.mjs`. Exact brand assets and font licences: `dist/assets/`.
 
 ## Adding portfolio projects
 
@@ -38,6 +38,10 @@ Add an approved object to the `projects` array in `src/data/projects.mjs`, using
 For a preview image, add the permitted image to `dist/assets/projects/` and set `preview: {src: '/assets/projects/example.webp', alt: 'Meaningful description', caption: 'Accurate context'}`. Only the current Aldwyn entry uses `artwork: 'aldwyn'`. Entries without imagery show a neutral project panel. Do not copy that artwork setting onto unrelated projects. Confirm permission for client names, content, imagery and links. Label concepts and work in progress; no invented results. Rebuild and check all links before committing. Removing a data entry removes its generated HTML on the next build.
 
 ## Form and launch boundaries
+
+Service buttons can carry intent into the local brief with `service=new`, `redesign`, `care` or `guidance`. The optional `extra` values are `pages`, `showcase`, `connection` and `migration`. Only these values are accepted. Care hides/disables website extras; unknown query values are ignored. An optional existing website address helps with care or redesign briefs without requesting that address over the network.
+
+The Services page explains core deliverables, scoped extras, content inputs, ownership and separate project/care/third-party costs. Care uses one flexible plan; actual fees, task cadence, content allowance and support/exit terms need to be decided before selling a plan. No commercial price or service-level commitment is introduced by the website copy.
 
 The project-start form is a local brief builder. It validates input, prepares text, and offers copy/download. It has no submission endpoint, online storage, analytics or third-party scripts. HTML submit starts disabled until the local JavaScript handler is installed. Do not relabel it as an enquiry form without implementing and testing real delivery and appropriate data handling.
 
@@ -50,3 +54,4 @@ See `docs/BUILD-BRIEF.md` for scope and decisions, `docs/DESIGN-RESEARCH.md` for
 The founder requested Patrick J. Sweeney Solicitors and Carwales be included on 19 November 2026. The portfolio uses actual browser-captured homepage images from that date and native HTTPS live-preview links that open in a new tab. The homepage features both entries from the same project data. Carwales remains labelled Live / In progress; public availability does not establish final client acceptance.
 
 Both client sites prevent cross-origin framing: Carwales returns X-Frame-Options: sameorigin, and P.J. Sweeney refused an actual embedded-browser attempt. The site therefore does not embed them or proxy around their restrictions. No remote site loads until a visitor follows the live-preview link. The screenshots are snapshots, not automatically refreshed. Refresh them with supported browser capture when the live sites change. No enquiries, purchases or client-site edits were performed.
+
