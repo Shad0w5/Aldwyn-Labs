@@ -21,6 +21,7 @@ document.addEventListener('click', event => {
 window.matchMedia('(min-width: 821px)').addEventListener('change', event => { if (event.matches) closeMenu(); });
 document.querySelector('#year').textContent = String(new Date().getFullYear());
 const form = document.querySelector('#project-form');
+if (form) {
 const status = document.querySelector('#form-status');
 const result = document.querySelector('#brief-result');
 const briefText = document.querySelector('#brief-text');
@@ -70,9 +71,20 @@ document.querySelector('#copy-brief').addEventListener('click', async () => {
   }
 });
 
+form.querySelector('button[type="submit"]').disabled = false;
+}
+
 // Native anchors still work without JavaScript; enhance links to closed FAQ answers.
 document.querySelectorAll('a[href^="#"]').forEach(link => link.addEventListener('click', () => {
   const target = document.getElementById(link.getAttribute('href').slice(1));
   if (target instanceof HTMLDetailsElement) target.open = true;
 }));
-form.querySelector('button[type="submit"]').disabled = false;
+// Resolve FAQ deep links when arriving from another page.
+function openLinkedDetails() {
+  let id;
+  try { id = decodeURIComponent(location.hash.slice(1)); } catch { return; }
+  const target = document.getElementById(id);
+  if (target instanceof HTMLDetailsElement) target.open = true;
+}
+openLinkedDetails();
+window.addEventListener('hashchange', openLinkedDetails);

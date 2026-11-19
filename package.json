@@ -1,9 +1,10 @@
 {
   "name": "aldwyn-labs-website",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
-  "description": "First unpublished Aldwyn Labs website template",
+  "description": "Unpublished multi-page Aldwyn Labs studio website",
   "scripts": {
-    "check": "node --check dist/app.js"
+    "build": "node scripts/build.mjs",
+    "check": "node --check src/app.js && node --check scripts/build.mjs && node scripts/check.mjs"
   }
 }
