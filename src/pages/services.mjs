@@ -1,4 +1,5 @@
-const serviceImage = `<figure class="svc-photo"><picture><source media="(max-width: 560px)" srcset="/assets/editorial/structure-small.webp"><img src="/assets/editorial/structure.webp" width="1600" height="2155" alt="Light and shadow across a concrete building facade" fetchpriority="high"></picture><figcaption>Structure. Space. Attention to detail.</figcaption></figure>`;
+import { brandArt } from '../brand-art.mjs';
+const serviceImage = brandArt('composition','Every part has a purpose.','svc-photo',true);
 const websiteExtras = [
   {title:'Additional pages',text:'A dedicated page for a service, a location or another part of the business.',value:'pages',service:'new',action:'Discuss extra pages'},
   {title:'Galleries & catalogues',text:'Show your projects or products in more detail. Information and browsing, without online checkout.',value:'showcase',service:'new',action:'Discuss a showcase'},
@@ -18,7 +19,7 @@ const services = {
 <section class="container section svc-final"><div><p class="eyebrow">Start with the essentials</p><h2>What should your<br>website help people do?</h2></div><a class="button button-primary" href="/start/?service=new">Prepare your website brief</a></section>`
 };
 
-const careArtwork=`<div class="svc-care-art" aria-hidden="true"><svg viewBox="0 0 520 420" fill="none"><path d="M78 290 260 114l182 176" stroke="currentColor" stroke-width="1"/><path d="m78 236 182-176 182 176M78 344l182-176 182 176" stroke="currentColor" stroke-width="1"/><path d="M166 324V148l94-91 94 91v176l-94 91-94-91Z" fill="currentColor" fill-opacity=".08" stroke="currentColor"/><path d="m166 148 94 91 94-91m-94 91v176" stroke="currentColor"/><circle cx="260" cy="239" r="103" stroke="currentColor" stroke-opacity=".35"/></svg><span>Maintain / Update / Review</span></div>`;
+const careArtwork = brandArt('continuity','Maintain. Update. Review.','svc-care-art',true);
 const care = {
   path:'/website-care/',nav:'services',title:'Optional website care — Aldwyn Labs',
   description:'Optional monthly website care, with maintenance, a defined content allowance if chosen, and support responsibilities agreed around your website.',

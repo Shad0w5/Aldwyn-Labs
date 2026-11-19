@@ -56,3 +56,6 @@ The form prepares a local brief with copy/download. It has no submission endpoin
 All pages retain noindex/nofollow for review. This is not access control. Business email/phone, real enquiry delivery, custom domain, final care fees/allowances/support terms, tiny favicon, final design acceptance and launch approval remain open. No canonical domain, sitemap or contact details are invented.
 
 See `docs/BUILD-BRIEF.md`, `docs/VALIDATION.md`, `docs/DESIGN-RESEARCH.md` and `docs/ASSET-SOURCES.md` for decisions, checks and sources. Current review images are in `docs/images/editorial-*-2026-11-19.jpg`.
+
+
+Current imagery update (19 November 2026): custom generated abstract artwork replaces the repeated architecture photograph. Assembly is used on Home, Composition on Services/Studio, and Continuity on Care. Use the responsive local WebP files in dist/assets/brand-art with src/brand-art.mjs. Keep real project screenshots on portfolio pages. The images are not a replacement logo or evidence of client work; prompts and provenance are in docs/BRAND-ART-PROMPTS.md and docs/ASSET-SOURCES.md.

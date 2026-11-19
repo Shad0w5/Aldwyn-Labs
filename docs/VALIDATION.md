@@ -1,3 +1,11 @@
+# Latest imagery revision — 19 November 2026
+
+- Three generated artworks visually inspected in generation output; no text, invented client UI, team or logo introduced. Six local WebP encodings are 640/1120px wide, all below 50KB each. Shared helper emits dimensions, responsive srcset, decorative empty alt and a readable caption.
+- npm run build and npm run check pass for nine pages. Prior portfolio and local brief behavior are unchanged.
+- New browser refresh was rejected by the cloud browser URL security policy. No workaround attempted. Earlier browser and screenshot evidence below applies to the previous architecture-photo revision, not this new imagery layout. Fresh desktop/phone visual acceptance remains pending.
+- Independent critic reviewed the final source and found no blocking issue: old grayscale/sizing rules are overridden, Care remains square, decorative alt text is appropriate and WebP descriptors match assets. Rendered crop/height remains unverified.
+- No deployment, DNS, purchases or contact delivery added. Changes remain on website/editorial-polish.
+
 # Validation — editorial redesign, 19 November 2026
 
 These checks apply to website/editorial-polish based on 8c7344e. Earlier checks of the previous layout do not establish the current layout's behavior. This review does not publish the redesign or change Render.

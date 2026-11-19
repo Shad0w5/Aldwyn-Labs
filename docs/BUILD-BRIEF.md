@@ -41,3 +41,7 @@ Nine pages build; all local links, anchors and assets resolve; unique IDs and on
 ## Open decisions and next action
 
 Founder visual acceptance, approved business contact route and real delivery/data handling, exact custom domain and Render configuration, final care-plan commercial terms, and tiny favicon. Next action is review of the isolated redesign. Deployment is separate.
+
+## Original imagery refinement — 19 November 2026
+
+The founder requested brand-specific imagery and further integrated polish. Replaced the repeated architecture photo and care line illustration with three custom-generated material studies, matching the locked palette without changing the logo. A shared figure component serves responsive local WebP assets. Refined hero framing, captions, heading tracking, project-card depth and hover borders. Portfolio remains actual project screenshots; the brief remains practical and local-only. No publication or new service scope. Browser refresh was blocked by the cloud URL security policy, so this revision has source/asset checks but no fresh rendered-layout acceptance.

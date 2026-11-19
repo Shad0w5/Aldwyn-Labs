@@ -13,3 +13,6 @@ The project form prepares a brief locally. Never send fields through GET or a re
 Use native links, labels and details controls; visible focus; readable controls; local fonts; and reduced-motion support. Use supported Work preview/browser tools for visual checks. Temporary QA pages must be removed before final build and checks. Record actual tests and limits in docs/VALIDATION.md.
 
 The founder authorized portfolio entries and live previews for https://www.pjsweeney.ie/ and https://carwales.ie/ on 19 November 2026. Use actual captures and protected native new-tab links. Both sites block embedded frames; do not proxy around them. Keep Carwales in progress until acceptance is confirmed. Client implementation belongs in its separate repository/chat.
+
+
+Current imagery update (19 November 2026): custom generated abstract artwork replaces the repeated architecture photograph. Assembly is used on Home, Composition on Services/Studio, and Continuity on Care. Use the responsive local WebP files in dist/assets/brand-art with src/brand-art.mjs. Keep real project screenshots on portfolio pages. The images are not a replacement logo or evidence of client work; prompts and provenance are in docs/BRAND-ART-PROMPTS.md and docs/ASSET-SOURCES.md.

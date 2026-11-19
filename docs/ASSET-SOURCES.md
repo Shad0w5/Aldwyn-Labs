@@ -1,3 +1,11 @@
+# Current original brand artwork — 19 November 2026
+
+Created specifically for Aldwyn using the built-in image-generation tool. Three related material studies use aubergine, plum, iris and soft white: Assembly (content/design/build), Composition (page hierarchy and craft), Continuity (ongoing care). These are decorative illustrations, not client work or office photography. No generated logo is used. Exact prompts are retained in BRAND-ART-PROMPTS.md.
+
+Responsive 1120px and 640px WebP encodings live in dist/assets/brand-art. Original generated images remain in the conversation's saved image outputs; the repository contains the website-ready encodings. No semantic image editing was performed; only resizing/encoding. There are no remote asset requests.
+
+The prior architectural photo is no longer referenced in the website; its files and provenance below remain as historical source records.
+
 # Image sources
 
 ## Editorial architecture photograph
