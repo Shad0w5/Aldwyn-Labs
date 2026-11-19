@@ -17,3 +17,13 @@ A separate critic checked code and content. Fixed supported findings: guard form
 
 ## Limits and next acceptance
 This is not an exhaustive accessibility, security, performance or cross-browser audit. No physical-device/Safari/Firefox checks, live email delivery, production DNS/hosting, domain-specific indexing or launch acceptance were performed. Narrow-browser-frame QA does not establish physical-device behavior. Fonts and UI details remain recommendations for founder review. Contact delivery, final portfolio permissions/content, destination and launch authorization are required before production.
+
+## Portfolio additions — 19 November 2026
+
+Founder supplied https://www.pjsweeney.ie/ and https://carwales.ie/ and explicitly requested portfolio entries with live previews. Both homepages were opened in the supported cloud browser and captured at 1348 × 926 pixels. Screenshots are stored locally with descriptive alternative text and capture-date captions. Descriptions use observable navigation/content, not invented delivery scope or measured outcomes. Carwales remains live / in progress; final acceptance is unconfirmed.
+
+Both sites prevent cross-origin embedded display. Carwales returned X-Frame-Options: sameorigin; a real P.J. Sweeney iframe attempt displayed “refused to connect”. The final implementation contains no embedded remote frame, proxy or automatic third-party request. Native live-preview links open the approved HTTPS URLs with target=_blank and rel=noopener noreferrer. Browser clicks opened new tabs at the expected URLs; direct homepage views were independently observed. No external form, enquiry, basket, purchase or client-site change was submitted.
+
+`npm run build` and `npm run check` pass for nine pages. The checker permits only the two intended external link destinations, still disallows remote assets/other endpoints and checks new-tab protections. Actual preview images loaded. Desktop Carwales project-detail width was 1363px with no horizontal overflow. Portfolio listing, both new detail pages and the updated Home were checked in a 320px outer iframe / 305px inner content width; all had scrollWidth equal to clientWidth. The temporary QA harness was removed from the final build.
+
+A separate critic checked the additions: no consequential defect found. Corrected the screenshot dimensions in markup and CSS to their actual 1348 × 926 ratio and updated the page-count documentation. Screenshots are dated snapshots and need recapturing when client sites change. This remains an unpublished review build.

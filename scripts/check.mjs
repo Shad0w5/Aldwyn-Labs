@@ -5,6 +5,7 @@ async function walk(dir){let files=[];for(const entry of await readdir(dir,{with
 const files=await walk(root),pages=files.filter(p=>p.endsWith('.html'));
 const errors=[];
 const docs=new Map();
+const approvedLiveUrls=new Set(['https://www.pjsweeney.ie/','https://carwales.ie/']);
 for(const file of pages){
  const text=await readFile(file,'utf8');const ids=[...text.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]);
  if(new Set(ids).size!==ids.length)errors.push(`${file}: duplicate IDs`);
@@ -13,12 +14,16 @@ for(const file of pages){
  docs.set(file,{text,ids:new Set(ids)});
 }
 for(const [file,{text}] of docs){
- for(const match of text.matchAll(/\b(?:href|src|srcset)="([^"]+)"/g)){
-  const url=match[1];if(/^(?:https?:|data:|mailto:|tel:)/.test(url)){if(!url.startsWith('data:'))errors.push(`${file}: unexpected external endpoint ${url}`);continue;}
+ for(const match of text.matchAll(/\b(href|src|srcset)="([^"]+)"/g)){
+  const url=match[2];if(/^(?:https?:|data:|mailto:|tel:)/.test(url)){if(!url.startsWith('data:')&&!(match[1]==='href'&&approvedLiveUrls.has(url)))errors.push(`${file}: unexpected external endpoint ${url}`);continue;}
   const [pathname,hash]=url.split('#');let target=pathname.startsWith('/')?path.join(root,pathname):path.resolve(path.dirname(file),pathname||path.basename(file));
   try{if((await stat(target)).isDirectory())target=path.join(target,'index.html');await stat(target);}catch{errors.push(`${file}: missing ${url}`);continue;}
   if(hash&&!docs.get(target)?.ids.has(hash))errors.push(`${file}: broken anchor ${url}`);
  }
+ for(const link of text.matchAll(/<a\b[^>]*href="(https:[^"]+)"[^>]*>/g)){
+  if(!link[0].includes('target="_blank"')||!link[0].includes('rel="noopener noreferrer"'))errors.push(`${file}: live link must safely open in a new tab`);
+ }
+ for(const frame of text.matchAll(/<iframe\b[^>]*>/g))if(/\ssrc=/.test(frame[0]))errors.push(`${file}: live frame must start without a remote src`);
 }
 const start=await readFile(path.join(root,'start/index.html'),'utf8');
 if(!/<button[^>]+type="submit"[^>]+disabled/.test(start))errors.push('Brief submission must start disabled until JS installs local handling.');

@@ -6,6 +6,52 @@
 // Only use an approved image of that project. Without one, a neutral preview panel is shown.
 export const projects = [
   {
+    slug: 'pj-sweeney',
+    title: 'Patrick J. Sweeney Solicitors',
+    category: 'Legal services website',
+    type: 'Website project',
+    status: 'Live website',
+    liveUrl: 'https://www.pjsweeney.ie/',
+    preview: {
+      src: '/assets/projects/pj-sweeney.jpg',
+      alt: 'Patrick J. Sweeney Solicitors homepage with a riverside photograph and appointment navigation',
+      caption: 'Live homepage capture · 19 November 2026'
+    },
+    summary: 'A website for a solicitor practice, bringing its service information, team and appointment contact routes together.',
+    disciplines: ['Business website', 'Legal services', 'Appointment information'],
+    briefLabel: 'The website',
+    briefHeading: 'Legal services, clearly presented.',
+    brief: 'The current site introduces Patrick J. Sweeney Solicitors and presents its practice areas alongside information about the firm, its team and ways to request an appointment.',
+    decisions: [],
+    scopeLabel: 'Website overview',
+    scopeHeading: 'Explore the live site.',
+    scope: ['Practice-area and service information', 'About and team pages', 'Contact details and appointment enquiry routes'],
+    progress: 'The website is live. Use the live preview to explore its current pages.'
+  },
+  {
+    slug: 'carwales',
+    title: 'Carwales',
+    category: 'Automotive catalogue & showroom',
+    type: 'Website project',
+    status: 'Live · In progress',
+    liveUrl: 'https://carwales.ie/',
+    preview: {
+      src: '/assets/projects/carwales.jpg',
+      alt: 'Carwales homepage showing car-electronics categories, catalogue navigation and a vehicle showroom',
+      caption: 'Live homepage capture · 19 November 2026'
+    },
+    summary: 'An automotive website with a car-electronics catalogue, vehicle showroom and routes to ask about products and availability.',
+    disciplines: ['Product catalogue', 'Vehicle showroom', 'Website in progress'],
+    briefLabel: 'The website',
+    briefHeading: 'A catalogue and a showroom.',
+    brief: 'The live website brings car equipment and vehicle listings into separate browsing areas. Visitors can explore categories, search the catalogue and follow enquiry routes.',
+    decisions: [],
+    scopeLabel: 'Website overview',
+    scopeHeading: 'Explore the current build.',
+    scope: ['Car-electronics categories and product listings', 'Separate vehicle showroom', 'Catalogue search and enquiry routes'],
+    progress: 'The website is live, with further refinements in progress. This entry shows the current build.'
+  },
+  {
     slug: 'aldwyn-labs',
     title: 'Aldwyn Labs',
     category: 'Studio website',

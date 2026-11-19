@@ -5,7 +5,7 @@
 ## Visitors and pages
 Business owners considering a website or optional website care. No industry niche is selected. Primary action is to prepare a project brief locally while business contacts remain unconfirmed.
 
-Home → Services / Website Care → Portfolio and individual project → Studio / process → Plan your website. Seven pages initially. The first portfolio entry is the actual Aldwyn website, a self-initiated project in progress. No client permissions or additional project assets have been provided.
+Home → Services / Website Care → Portfolio and individual project → Studio / process → Plan your website. Nine pages currently. Portfolio entries are Patrick J. Sweeney Solicitors (live website), Carwales (live / in progress), and the actual Aldwyn website (self-initiated / in progress). The founder explicitly requested the two client URLs be added with live previews on 19 November 2026.
 
 ## Sources and decisions
 - ALDWYN-CURRENT-BRIEF.md, PROJECT-INSTRUCTIONS.md, ENGINEERING-HANDOFF.md and BUSINESS-BRIEF-AND-PLAN.md supplied in the project; newer founder facts supersede older assumptions.
@@ -24,3 +24,7 @@ Home → Services / Website Care → Portfolio and individual project → Studio
 
 ## Open launch questions
 Exact domain, hosting/destination, approved email/phone, enquiry delivery and data handling, final typography/UI acceptance, simplified favicon, approved additional portfolio projects. None of these are silently invented by this build.
+
+## Portfolio extension — 19 November 2026
+
+Add actual screenshots and individual pages for the two founder-supplied sites. Describe observable website features rather than inventing project briefs, design roles, technologies, results or testimonials. Native live-preview links open the websites in separate tabs because both sites block embedded framing. Exact URLs and source observations are recorded in README and VALIDATION. Aldwyn remains unpublished; no client website was modified.

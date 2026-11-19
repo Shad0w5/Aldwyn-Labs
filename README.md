@@ -1,6 +1,6 @@
 # Aldwyn Labs website
 
-An unpublished seven-page studio website, preserving the selected extended AL monogram and dark aubergine/iris identity. Source is maintained in this repository. GitHub access is verified; a separate Codex Cloud environment or automatic chat/repository sync has not been verified.
+An unpublished nine-page studio website, preserving the selected extended AL monogram and dark aubergine/iris identity. Source is maintained in this repository. GitHub access is verified; a separate Codex Cloud environment or automatic chat/repository sync has not been verified.
 
 ## Work on the site
 
@@ -23,6 +23,8 @@ In ChatGPT Work, use `sites-preview start /workspace/sites/aldwyn-labs` and the 
 | `/services/` | `src/pages/services.mjs` |
 | `/website-care/` | `src/pages/services.mjs` |
 | `/portfolio/` | `src/pages/portfolio.mjs` and `src/data/projects.mjs` |
+| `/portfolio/pj-sweeney/` | Generated from project data |
+| `/portfolio/carwales/` | Generated from project data |
 | `/portfolio/aldwyn-labs/` | Generated from project data |
 | `/studio/` | `src/pages/main.mjs` |
 | `/start/` | `src/pages/main.mjs` and `src/project-form.mjs` |
@@ -42,3 +44,9 @@ The project-start form is a local brief builder. It validates input, prepares te
 All pages are marked noindex/nofollow. This is a review setting, not access control. No site has been published or registered for hosting by this change. Domain, business email/phone, hosting, final typography/UI, simplified favicon, real enquiry handling and launch approval remain open. No canonical domain or sitemap has been invented.
 
 See `docs/BUILD-BRIEF.md` for scope and decisions, `docs/DESIGN-RESEARCH.md` for research, and `docs/VALIDATION.md` for actual checks and remaining limits.
+
+## Live portfolio previews
+
+The founder requested Patrick J. Sweeney Solicitors and Carwales be included on 19 November 2026. The portfolio uses actual browser-captured homepage images from that date and native HTTPS live-preview links that open in a new tab. The homepage features both entries from the same project data. Carwales remains labelled Live / In progress; public availability does not establish final client acceptance.
+
+Both client sites prevent cross-origin framing: Carwales returns X-Frame-Options: sameorigin, and P.J. Sweeney refused an actual embedded-browser attempt. The site therefore does not embed them or proxy around their restrictions. No remote site loads until a visitor follows the live-preview link. The screenshots are snapshots, not automatically refreshed. Refresh them with supported browser capture when the live sites change. No enquiries, purchases or client-site edits were performed.

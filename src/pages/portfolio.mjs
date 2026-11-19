@@ -2,6 +2,16 @@ import { projects } from '../data/projects.mjs';
 
 const escape = value => String(value).replace(/[&<>"']/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[character]);
 const projectPath = project => `/portfolio/${project.slug}/`;
+function liveLink(project, className = 'text-link') {
+  if (!project.liveUrl) return '';
+  const url = new URL(project.liveUrl);
+  if (url.protocol !== 'https:' || !['www.pjsweeney.ie', 'carwales.ie'].includes(url.hostname)) throw new Error('Unapproved portfolio website URL');
+  return `<a class="${className}" href="${escape(url.href)}" target="_blank" rel="noopener noreferrer">Live preview <span class="new-tab-label">(new tab)</span></a>`;
+}
+function livePreview(project) {
+  if (!project.liveUrl) return '';
+  return `<section class="container live-preview-section"><div class="live-preview-heading"><div><p class="eyebrow">See it in action</p><h2>The live website.</h2><p>Open the current website in its own tab to explore it.</p></div>${liveLink(project,'button button-primary')}</div></section>`;
+}
 
 // This is original HTML/CSS artwork, not a screenshot or a live client website.
 function projectArtwork(project, large = false) {
@@ -38,7 +48,7 @@ function projectCard(project) {
       <h2><a href="${projectPath(project)}">${escape(project.title)}</a></h2>
       <p>${escape(project.summary)}</p>
       <ul class="project-disciplines" aria-label="Project disciplines">${project.disciplines.map(item => `<li>${escape(item)}</li>`).join('')}</ul>
-      <a class="text-link" href="${projectPath(project)}">Explore the project</a>
+      <div class="project-link-actions"><a class="text-link" href="${projectPath(project)}">Explore the project</a>${liveLink(project)}</div>
     </div>
   </article>`;
 }
@@ -47,13 +57,13 @@ const listing = {
   path: '/portfolio/',
   nav: 'portfolio',
   title: 'Portfolio — Aldwyn Labs',
-  description: 'Explore Aldwyn Labs projects, with their context, design decisions and current status. Our studio website is the first work in progress.',
+  description: 'Explore Aldwyn Labs website projects, including Patrick J. Sweeney Solicitors, Carwales and our own studio website, with live previews and project status.',
   body: `<section class="container page-intro portfolio-intro" aria-labelledby="portfolio-title">
     <p class="eyebrow">The portfolio</p>
     <h1 id="portfolio-title">Ideas taking<br><span class="iris">shape.</span></h1>
-    <p class="lead">A closer look at the work and the decisions behind it. Starting with our own corner of the web.</p>
+    <p class="lead">Business websites, live projects and work taking shape. Explore each website and the details behind it.</p>
   </section>
-  <section class="container portfolio-projects" aria-label="Projects">${projects.map(projectCard).join('')}</section>
+  <section class="container portfolio-projects" id="projects" aria-label="Projects">${projects.map(projectCard).join('')}</section>
   <section class="container section portfolio-context" aria-labelledby="portfolio-context-title">
     <p class="eyebrow">A growing collection</p>
     <div><h2 id="portfolio-context-title">The process belongs<br>in the picture.</h2><p>Work takes shape through decisions, feedback and refinement. Each project is labelled with its context and current status, so you can see what is in progress and what has been completed.</p><p>More projects will be added as there is work ready to share.</p></div>
@@ -72,11 +82,13 @@ const detailPages = projects.map(project => ({
     <h1 id="project-title">${escape(project.title)}<span class="iris">.</span></h1>
     <p class="lead">${escape(project.summary)}</p>
     <ul class="project-disciplines" aria-label="Project disciplines">${project.disciplines.map(item => `<li>${escape(item)}</li>`).join('')}</ul>
+    ${project.liveUrl ? `<div class="project-live-action">${liveLink(project,'button button-primary')}</div>` : ''}
   </section>
   <div class="container project-detail-art">${projectArtwork(project, true)}</div>
-  <section class="container section project-story" aria-labelledby="brief-title"><p class="eyebrow">The brief</p><div class="prose"><h2 id="brief-title">A clear starting point.</h2><p>${escape(project.brief)}</p></div></section>
-  <section class="project-decisions"><div class="container section"><div class="section-heading"><p class="eyebrow">The thinking</p><div><h2>Every detail has a job.</h2><p>A few choices shaping this project.</p></div></div><div class="project-decision-grid">${project.decisions.map(decision => `<article><h3>${escape(decision.title)}</h3><p>${escape(decision.text)}</p></article>`).join('')}</div></div></section>
-  <section class="container section project-story" aria-labelledby="scope-title"><p class="eyebrow">In development</p><div class="prose"><h2 id="scope-title">What’s taking shape.</h2><ul class="checklist">${project.scope.map(item => `<li>${escape(item)}</li>`).join('')}</ul><div class="project-progress-note"><h3>Current status</h3><p>${escape(project.progress)}</p></div></div></section>
+  ${livePreview(project)}
+  <section class="container section project-story" aria-labelledby="brief-title"><p class="eyebrow">${escape(project.briefLabel || 'The brief')}</p><div class="prose"><h2 id="brief-title">${escape(project.briefHeading || 'A clear starting point.')}</h2><p>${escape(project.brief)}</p></div></section>
+  ${project.decisions.length ? `<section class="project-decisions"><div class="container section"><div class="section-heading"><p class="eyebrow">The thinking</p><div><h2>Every detail has a job.</h2><p>A few choices shaping this project.</p></div></div><div class="project-decision-grid">${project.decisions.map(decision => `<article><h3>${escape(decision.title)}</h3><p>${escape(decision.text)}</p></article>`).join('')}</div></div></section>` : ''}
+  <section class="container section project-story" aria-labelledby="scope-title"><p class="eyebrow">${escape(project.scopeLabel || 'In development')}</p><div class="prose"><h2 id="scope-title">${escape(project.scopeHeading || 'What’s taking shape.')}</h2><ul class="checklist">${project.scope.map(item => `<li>${escape(item)}</li>`).join('')}</ul><div class="project-progress-note"><h3>Current status</h3><p>${escape(project.progress)}</p></div></div></section>
   <section class="container section"><div class="cta-band"><div><p class="eyebrow">A website of your own</p><h2>Start with<br>your business.</h2></div><a class="button button-primary" href="/start/">Prepare a project brief</a></div></section>`
 }));
 
