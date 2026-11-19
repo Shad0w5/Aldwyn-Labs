@@ -62,3 +62,12 @@ Added a generated website-planning study inside Home and Studio process sections
 Care now presents one Website Care package with a quote-after-review label, maintenance scope matrix, optional content allowance, support/recovery responsibilities, exclusions and an illustrated request workflow. No prices, hours, task cadence, response guarantee or cancellation terms invented.
 
 Nine-page build and static checks pass. XML checks confirm valid SVG, unchanged AL construction and identical letter outlines. Latest browser layout acceptance remains pending due to the previously encountered cloud URL security restriction; no new browser screenshot or full rendered-layout check is claimed. Review branch only; no deployment.
+
+
+## Studio layout correction — 19 November 2026
+
+User reported the Studio page looked broken. The current preview loaded correctly; no missing CSS/assets or horizontal overflow was reproduced. Visual inspection found the process artwork isolated at the left of a wide section, separated from its steps. Replaced that arrangement with a shared two-column grid: full 3:2 artwork on the left and numbered steps on the right. It stacks at 820px. Removed the old Studio-specific crop/margin overrides from shared site CSS. Brand, copy, services and publication settings remain unchanged.
+
+Validation: npm run build and npm run check passed for all nine pages. The managed preview browser became accessible this turn. Visually inspected desktop hero and process and the 390px framed mobile process. DOM layout checks at iframe widths 320, 390, 768 and 1024px showed no horizontal overflow (content widths 305, 375, 753 and 1009px, excluding scrollbar). All three Studio images loaded at each width. This was a focused layout review, not a whole-site interaction retest. Temporary responsive harness removed before saving.
+
+Evidence: docs/images/studio-process-fixed-2026-11-19.jpg. Saved to website/editorial-polish for PR #3 review; no production deployment. Next: founder review of Studio preview. If the report concerns a different deployed version or section, capture that URL/view before diagnosing further.
