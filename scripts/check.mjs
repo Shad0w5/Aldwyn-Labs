@@ -30,8 +30,35 @@ for(const [file,{text}] of docs){
  for(const frame of text.matchAll(/<iframe\b[^>]*>/g))if(/\ssrc=/.test(frame[0]))errors.push(`${file}: live frame must start without a remote src`);
 }
 const start=await readFile(path.join(root,'start/index.html'),'utf8');
+// Catch stale service buttons and unconnected pages when the offer or routes change.
+const serviceValues=new Set([...start.matchAll(/<option value="([^"]+)"/g)].map(match=>match[1]));
+const extraValues=new Set([...start.matchAll(/name="extras" value="([^"]+)"/g)].map(match=>match[1]));
+const reachable=new Set([path.join(root,'index.html')]);
+const pending=[...reachable];
+while(pending.length){
+ const file=pending.pop();
+ for(const match of docs.get(file).text.matchAll(/<a\b[^>]*href="([^"#]+)"/g)){
+  const href=match[1].replaceAll('&amp;','&');
+  if(!href.startsWith('/'))continue;
+  const url=new URL(href,'https://review.invalid');
+  if(url.pathname==='/start/'){
+   if(url.searchParams.has('service')&&!serviceValues.has(url.searchParams.get('service')))errors.push(`${file}: unknown brief service ${href}`);
+   for(const extra of url.searchParams.getAll('extra'))if(!extraValues.has(extra))errors.push(`${file}: unknown brief extra ${href}`);
+  }
+  const target=path.join(root,url.pathname.endsWith('/')?url.pathname+'index.html':url.pathname);
+  if(docs.has(target)&&!reachable.has(target)){reachable.add(target);pending.push(target);}
+ }
+}
+for(const file of docs.keys())if(path.basename(file)!=='404.html'&&!reachable.has(file))errors.push(`${file}: no navigation path from home`);
+const css=await readFile(path.join(root,'styles.css'),'utf8');
+for(const match of css.matchAll(/url\(['"]?([^)'"\s]+)['"]?\)/g)){
+ const url=match[1];if(url.startsWith('data:'))continue;
+ if(!url.startsWith('/')){errors.push(`Unexpected stylesheet asset ${url}`);continue;}
+ try{await stat(path.join(root,url));}catch{errors.push(`Missing stylesheet asset ${url}`);}
+}
+
 if(!/<button[^>]+type="submit"[^>]+disabled/.test(start))errors.push('Brief submission must start disabled until JS installs local handling.');
 if(/<form[^>]+(?:action=|method="get")/.test(start))errors.push('Brief form must not send personal data.');
 for(const file of ['src/app.js','dist/app.js']){const s=await readFile(file,'utf8');if(/\b(?:fetch|XMLHttpRequest|sendBeacon|localStorage|sessionStorage)\s*[.(]/.test(s))errors.push(`${file}: unexpected data transmission/storage`);}
-if(errors.length){console.error(errors.join('\n'));process.exitCode=1;}else console.log(`Checked ${pages.length} pages: unique IDs, headings, metadata, local links/assets, cross-page anchors and local-only form safeguards.`);
+if(errors.length){console.error(errors.join('\n'));process.exitCode=1;}else console.log(`Checked ${pages.length} pages: unique IDs, headings, metadata, local links/assets, cross-page anchors, home reachability, brief routes, CSS assets and local-only form safeguards.`);
 

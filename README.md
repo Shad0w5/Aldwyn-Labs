@@ -45,20 +45,27 @@ For a screenshot, add the permitted file to `dist/assets/projects/` and set its 
 
 The founder requested Patrick J. Sweeney Solicitors and Carwales on 19 November 2026. Their previews are dated browser captures and native HTTPS new-tab links. Carwales stays Live / In progress until final acceptance is confirmed. Both client sites prevent framing, so no remote site is embedded or automatically loaded. No proxy bypass is used. Captures need refreshing when the live sites change.
 
-The locally hosted architectural photograph is an editorial texture, not an Aldwyn office or client project. Photographer, source, licence and encodings are recorded in `docs/ASSET-SOURCES.md`. Preserve those notes when replacing imagery.
+Current artwork is generated for Aldwyn and hosted locally. It does not represent an office or client project. Historical photograph licences remain in `docs/ASSET-SOURCES.md`; generated artwork prompts are in `docs/BRAND-ART-PROMPTS.md`.
 
 ## Brief builder and launch boundaries
 
-Service links accept `service=new`, `redesign`, `care` or `guidance`. Optional `extra` values are `pages`, `showcase`, `connection`, `migration`. Unknown values are ignored. Care hides/disables extras. The optional existing URL is held as text; the application does not request it.
+Service links accept `service=new`, `redesign`, `landing`, `improvements`, `care` or `guidance`. Optional `extra` values are `pages`, `showcase`, `connection`, `migration`. Unknown values are ignored. Care hides/disables extras. The optional existing URL is held as text; the application does not request it.
 
 The form prepares a local brief with copy/download. It has no submission endpoint, application storage, analytics or third-party scripts. HTML submit starts disabled until JavaScript handling is installed. Do not present it as enquiry delivery without implementing and testing a real contact flow and appropriate data handling.
 
-All pages retain noindex/nofollow for review. This is not access control. Business email/phone, real enquiry delivery, custom domain, final care fees/allowances/support terms, tiny favicon, final design acceptance and launch approval remain open. No canonical domain, sitemap or contact details are invented.
+All pages retain noindex/nofollow for review. This is not access control. Business email/phone, real enquiry delivery, custom domain, final care fees/allowances/support terms, final design acceptance and launch approval remain open. No canonical domain, sitemap or contact details are invented.
 
-See `docs/BUILD-BRIEF.md`, `docs/VALIDATION.md`, `docs/DESIGN-RESEARCH.md` and `docs/ASSET-SOURCES.md` for decisions, checks and sources. Current review images are in `docs/images/editorial-*-2026-11-19.jpg`.
+See `docs/BUILD-BRIEF.md`, `docs/VALIDATION.md`, `docs/DESIGN-RESEARCH.md` and `docs/ASSET-SOURCES.md` for decisions, checks and sources. Current review evidence is listed in `docs/VALIDATION.md`; the older `editorial-*` captures show superseded artwork. The final integration screenshot is `docs/images/final-home-2026-11-19.jpg`.
 
 
 Current imagery update (19 November 2026): custom generated abstract artwork replaces the repeated architecture photograph. Assembly is used on Home, Composition on Services/Studio, and Continuity on Care. Use the responsive local WebP files in dist/assets/brand-art with src/brand-art.mjs. Keep real project screenshots on portfolio pages. The images are not a replacement logo or evidence of client work; prompts and provenance are in docs/BRAND-ART-PROMPTS.md and docs/ASSET-SOURCES.md.
 
 
 Website wordmark update: the founder requested larger lettering on 19 November 2026. Use dist/assets/logo-web.svg for the website horizontal lockup; original logo.svg is retained. AL construction is unchanged. In-page planning art and the illustrated Care workflow are now part of the review design. Care remains one scoped package with an optional content allowance and individually agreed pricing.
+
+
+## Integration checkpoint — 19 November 2026
+
+The homepage, Services and footer share the three-part offer: design/build, improvements and optional care. Nine main routes plus a generated `dist/404.html` fallback use one header/footer and the existing monogram favicon. The 404 document was visually checked directly; the production host must still be checked for missing-URL status and fallback handling after an authorized deployment. Canonical URLs, sitemap and live indexing wait for a confirmed domain and launch. All review documents retain noindex.
+
+The brief builder is functional for preparation, copy and download only. Confirm a real business destination and data handling before implementing enquiry delivery. Do not treat it as a working contact submission. See the latest validation checkpoint for actual browser checks, remaining launch dependencies and the next frontend review.

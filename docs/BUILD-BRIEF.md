@@ -60,3 +60,10 @@ Nine-page build and static checks pass. XML checks confirm valid SVG, unchanged 
 ## Services structure approved — 19 November 2026
 
 Founder approved revising Services around three related groups: Design & build (business websites, redesigns, landing pages), Improve & extend (scoped additions, showcases, existing-tool connections, content moves) and Care & maintain (link to dedicated optional care plan). SEO foundations belong within agreed website builds; ongoing SEO, advertising, social management, apps, IT support and AI research are not advertised as current services. New landing-page and existing-site improvement brief choices preserve the selected route. No price or delivery commitment is invented. Preserve existing #website-extras links, project images and exact locked identity. Acceptance: readable three-part hierarchy, keyboard/native anchor links, correct brief preselection, care boundaries and mobile stacking. Review branch only; no deployment.
+
+
+## Final integration checkpoint — 19 November 2026
+
+Founder requested a complete site review and connected components before one final frontend change. Home now mirrors all three approved service groups; footer links use the current improvements wording. All nine main pages remain connected through the shared header/footer and contextual links. Added unchanged monogram favicon and a generated shared-shell 404 document with home/services recovery links. Removed superseded Studio crop overrides. Strengthened checks for home reachability, service/extra query values and CSS/font asset files. Updated handoff guidance. No contact backend, third-party accounts, launch, purchase or DNS change.
+
+Review build is ready for the founder’s remaining frontend request. Business contact destination/enquiry delivery, approved care commercials, domain/indexing and production fallback handling remain open launch tasks. Current implementation does not claim enquiry delivery.
