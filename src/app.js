@@ -36,7 +36,7 @@ const extras = {
 // Only known options can be carried over from the services and care pages.
 const params = new URLSearchParams(location.search);
 const requestedService = params.get('service');
-if (['new', 'redesign', 'care', 'guidance'].includes(requestedService)) projectType.value = requestedService;
+if (['new', 'redesign', 'landing', 'improvements', 'care', 'guidance'].includes(requestedService)) projectType.value = requestedService;
 for (const extra of params.getAll('extra')) {
   if (Object.hasOwn(extras, extra)) form.querySelector(`input[name="extras"][value="${extra}"]`).checked = true;
 }
