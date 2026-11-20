@@ -12,7 +12,6 @@ Optional context
 Business name:
 Existing website:
 Useful additions or changes:
-Your name and contact details (only if you want them in your copy):
 
 Keep passwords and sensitive customer information out of this file.
 Project details and costs are discussed separately.

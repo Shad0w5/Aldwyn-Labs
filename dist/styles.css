@@ -60,16 +60,24 @@
 .brief-progress>p{color:var(--iris);font-size:.875rem}.brief-progress progress{appearance:none;display:block;width:100%;height:4px;border:0;background:var(--background);margin:18px 0}
 .brief-progress progress::-webkit-progress-bar{background:var(--background)}.brief-progress progress::-webkit-progress-value{background:var(--iris)}.brief-progress progress::-moz-progress-bar{background:var(--iris)}
 .brief-progress ol{display:flex;justify-content:space-between;gap:14px;list-style:none;margin:0;padding:0;font-size:.875rem;color:var(--muted)}.brief-progress li[aria-current]{color:var(--text)}
-.brief-step-actions{display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between}.brief-contact-details{border-block:1px solid var(--border);margin:24px 0;padding:20px 0}.brief-contact-details summary{cursor:pointer;font-size:.9375rem}.brief-contact-details summary span{color:var(--muted)}.brief-contact-details .form-row{margin-top:22px}.brief-contact-details .field{margin-bottom:0}
+.brief-step-actions{display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between}
 .brief-result{margin-top:0;padding-top:0;border:0}.brief-result h2{font-size:1.75rem}.brief-result>label{margin-top:24px}.brief-template-link{display:block;width:fit-content}.brief-aside>.field-help{font-size:.875rem}
 .enter-view{opacity:.65;transform:translateY(12px);transition:opacity 450ms ease,transform 450ms ease}.enter-view.is-visible{opacity:1;transform:none}
 .mobile-actions{display:none}
 @media(max-width:1100px){.home-opening{gap:40px}.home-opening h1{font-size:clamp(2.75rem,4.8vw,4.1rem)}}
 @media(max-width:820px){.home-opening{grid-template-columns:1fr;gap:44px;padding-block:48px 64px}.home-opening-copy{max-width:650px}.home-opening h1{font-size:clamp(3rem,7.5vw,4.8rem)}.home-feature{max-width:650px;transform:none}.home-opening-actions{flex-direction:row;align-items:center}}
-@media(max-width:620px){.home-opening h1{font-size:clamp(2.6rem,10vw,3.7rem)}.home-opening h1 br:nth-of-type(2){display:initial}.home-opening{padding-block:40px 56px}.home-opening-actions{align-items:flex-start;flex-direction:column}.home-availability{line-height:1.6}.has-mobile-actions{padding-bottom:calc(88px + env(safe-area-inset-bottom))}.mobile-actions{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:45;background:var(--background);border-top:1px solid var(--border);padding:12px 20px calc(12px + env(safe-area-inset-bottom));gap:18px;align-items:center;justify-content:space-between}.mobile-actions>a:first-child{font-size:.9375rem;text-decoration:underline;text-underline-offset:5px}.mobile-actions .button{font-size:.9375rem;min-height:46px;padding:11px 18px}.brief-step-actions>.button{flex:1}.brief-progress ol{font-size:.8125rem;gap:8px}.brief-contact-details .form-row{gap:22px}}
+@media(max-width:620px){.home-opening h1{font-size:clamp(2.6rem,10vw,3.7rem)}.home-opening h1 br:nth-of-type(2){display:initial}.home-opening{padding-block:40px 56px}.home-opening-actions{align-items:flex-start;flex-direction:column}.home-availability{line-height:1.6}.has-mobile-actions{padding-bottom:calc(88px + env(safe-area-inset-bottom))}.mobile-actions{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:45;background:var(--background);border-top:1px solid var(--border);padding:12px 20px calc(12px + env(safe-area-inset-bottom));gap:18px;align-items:center;justify-content:space-between}.mobile-actions>a:first-child{font-size:.9375rem;text-decoration:underline;text-underline-offset:5px}.mobile-actions .button{font-size:.9375rem;min-height:46px;padding:11px 18px}.brief-step-actions>.button{flex:1}.brief-progress ol{font-size:.8125rem;gap:8px}}
 @media(prefers-reduced-motion:reduce){.home-feature,.enter-view{transform:none;transition:none}.enter-view{opacity:1}}
 
 .brief-progress{scroll-margin-top:120px}
+
+/* Local planner context is visible even when navigation is collapsed. */
+.header-inner{min-height:112px;padding-bottom:24px}
+.header-inner nav{justify-content:flex-end}
+.planner-purpose{position:absolute;bottom:8px;right:0;margin:0;text-align:right;font-size:.8125rem;color:var(--muted);line-height:1.4}
+.mobile-actions>span{font-size:.75rem;color:var(--muted);grid-column:1/-1;text-align:center}
+@media(max-width:820px){.planner-purpose{text-align:center;left:0}.header-inner nav{justify-content:flex-start}html:not(.js) .header-inner nav{padding-bottom:32px}}
+@media(max-width:620px){.mobile-actions{display:grid;grid-template-columns:1fr auto;gap:6px 18px}.has-mobile-actions{padding-bottom:calc(112px + env(safe-area-inset-bottom))}.has-mobile-actions :is(a,button,input,select,textarea,summary,[tabindex]){scroll-margin-bottom:calc(124px + env(safe-area-inset-bottom))}}
 
 /* Service pages: a photo-led opening, open grids and a single care-plan panel. */
 .svc-hero{display:grid;grid-template-columns:1.05fr 1fr;gap:80px;align-items:center;padding-block:64px 96px}
@@ -166,3 +174,10 @@
 .work-notes{padding-block:72px;background:var(--surface);border-block:1px solid var(--line)}.work-notes h2{margin-top:24px;font-size:clamp(2rem,3.8vw,3.3rem)}@media(max-width:560px){.work-notes{padding-block:56px}.work-notes h2{font-size:2.1rem}}
 
 .work-status-note{padding-block:64px;border-bottom:1px solid var(--line)}.work-status-note h2{font-size:clamp(2rem,3vw,2.75rem);margin-top:24px}.work-status-note>p:not(.eyebrow){color:var(--muted);max-width:58ch;margin-top:24px}
+
+/* Studio work is distinct from the two client projects. */
+.work-studio-project{display:grid;grid-template-columns:150px 1fr;gap:48px;align-items:center;padding:48px;border:1px solid var(--line);border-radius:18px;background:var(--surface);margin-block:36px 80px}
+.work-studio-symbol img{width:120px;height:auto}.work-studio-project h2{font-size:2rem;margin-top:16px}.work-studio-project p:not(.eyebrow){max-width:58ch;color:var(--muted);font-size:1rem;margin-top:18px}.work-studio-project .text-link{margin-top:24px}
+.work-page-study{padding-block:32px 72px}.work-page-study figure{margin:0}.work-page-study figcaption{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end;margin-block:24px 32px}.work-page-study h2{font-size:clamp(2rem,3.6vw,3rem)}.work-page-study figcaption p{font-size:1rem;line-height:1.7;color:var(--muted);max-width:52ch}.work-page-image{border:1px solid var(--line);padding:20px;background:var(--surface);border-radius:16px;overflow:hidden}.work-page-image img{display:block;width:100%;height:auto;border-radius:5px}
+@media(max-width:820px){.work-studio-project{grid-template-columns:100px 1fr;gap:28px;padding:32px}.work-studio-symbol img{width:88px}.work-page-study figcaption{grid-template-columns:1fr;gap:20px}}
+@media(max-width:560px){.work-studio-project{grid-template-columns:1fr;padding:28px 24px;margin-bottom:56px}.work-studio-symbol img{width:64px}.work-page-image{padding:8px;border-radius:10px}.work-page-study{padding-bottom:48px}}

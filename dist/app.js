@@ -64,7 +64,7 @@ const extras = {
   pages: 'Additional pages',
   showcase: 'Project or product showcase',
   connection: 'Existing booking or enquiry tool',
-  migration: 'Content move & redirects'
+  migration: 'Moving from an old website'
 };
 // Only known options can be carried over from the services and care pages.
 const params = new URLSearchParams(location.search);
@@ -78,7 +78,7 @@ function updateServiceFields() {
   extraFields.hidden = care;
   extraFields.disabled = care;
   document.querySelector('#service-choice-note').textContent = care
-    ? 'Add the website address and any platform details on the following step.'
+    ? 'Add the existing website address on the following step.'
     : 'Choose the closest option. You can add the details below.';
   document.querySelector('label[for="message"]').textContent = care ? 'What needs updating or looking after?' : 'What would you like to build or change?';
   form.elements.message.placeholder = care ? 'For example: updating service information and photographs, with help maintaining the existing site.' : 'For example: a five-page site for our practice, with a service page, a gallery and appointment enquiries.';
@@ -92,8 +92,6 @@ form.addEventListener('submit', event => {
   if (activeStep === 0) { if (checkFields(steps[0])) showStep(1); return; }
   if (!checkFields(form)) return;
   const data = new FormData(form);
-  const name = String(data.get('name')).trim();
-  const email = String(data.get('email')).trim();
   const message = String(data.get('message')).trim();
   if (message.length < 20) {
     result.hidden = true;
@@ -103,7 +101,7 @@ form.addEventListener('submit', event => {
     return;
   }
   const selectedExtras = data.getAll('extras').filter(value => Object.hasOwn(extras, value)).map(value => extras[value]);
-  briefText.value = ['ALDWYN LABS — PROJECT BRIEF', '', `Name: ${name || 'Not provided'}`, `Email: ${email || 'Not provided'}`, `Business: ${String(data.get('business')).trim() || 'Not provided'}`, `Existing website: ${String(data.get('website') || '').trim() || 'Not provided'}`, `Project: ${projectType.selectedOptions[0].textContent}`, ...(projectType.value === 'care' ? [] : [`Optional extras to discuss: ${selectedExtras.join(', ') || 'None selected'}`]), '', 'What I have in mind:', message, '', 'Scope and costs are subject to agreement.', 'Prepared locally. This brief has not been sent to Aldwyn Labs.'].join('\n');
+  briefText.value = ['ALDWYN LABS — PROJECT BRIEF', '', `Business: ${String(data.get('business')).trim() || 'Not provided'}`, `Existing website: ${String(data.get('website') || '').trim() || 'Not provided'}`, `Project: ${projectType.selectedOptions[0].textContent}`, ...(projectType.value === 'care' ? [] : [`Optional extras to discuss: ${selectedExtras.join(', ') || 'None selected'}`]), '', 'What I have in mind:', message, '', 'Scope and costs are subject to agreement.', 'Prepared locally. This brief has not been sent to Aldwyn Labs.'].join('\n');
   showStep(2);
   setStatus('Your brief is ready to review.');
 });

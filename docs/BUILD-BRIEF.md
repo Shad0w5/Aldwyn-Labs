@@ -85,3 +85,12 @@ This decision supersedes the preceding feedback pass's one-person positioning. T
 Acceptance: each page has a distinct purpose; no headcount messaging; benefits and practical descriptions precede necessary scope boundaries; no unsupported contacts, fees, delivery times or results; accurate brief labels and care state; build and route checks pass; revised desktop openings and narrow layout samples reviewed. Research covered Fhoke, aurelo and Built by Buffalo. Two critics reviewed before and after and their remaining substantive suggestions were applied.
 
 Status: saved for review on website/editorial-polish / PR #3. Do not merge into the Render-connected branch or deploy without founder approval. Next: founder reviews the new copy and then confirms a real domain/inbox before enquiry delivery is implemented.
+
+
+## Approved revision — 20 November 2026
+
+Founder approved the focused plan, including separating Aldwyn's own build from client work. Scope: sharper Home/supporting copy and plainer service labels; factual interior screenshots; more readable one-package Care; local Project planner disclosure before navigation; remove name/email; preserve six service paths, three-step review/copy/download and offline fallback; exact 1200 x 630 share export; responsive, keyboard and affected-flow checks; independent source critic. Exact brand, primary work-led hero and landscape work card preserved.
+
+Founder additions: price/timing signals are the biggest remaining information gap and the next commercial priority; figures need realistic approval. Privacy work must cover all visitor processing, including hosting/CDN logs and any future analytics, rather than only forms. Clean source links without query/tracking tags. The repository's docs/LAUNCH-READINESS.md records these decisions and data flows. No unverified public notice or commercial claims.
+
+Acceptance: distinguish client/studio work; honest Carwales status; actual image dimensions/alt/captions; visible planner context outside collapsed menus; no personal contact fields; correct local-only behavior for all six choices; Care scope/optional allowance/support/exit details retained; correct share dimensions; build/static checks and sampled layouts pass. No deployment.

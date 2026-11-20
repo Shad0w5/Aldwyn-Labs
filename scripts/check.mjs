@@ -11,6 +11,7 @@ for(const file of pages){
  if(new Set(ids).size!==ids.length)errors.push(`${file}: duplicate IDs`);
  if((text.match(/<h1[\s>]/g)||[]).length!==1)errors.push(`${file}: expected one h1`);
  for(const required of ['<title>','name="description"','noindex, nofollow','id="main"','aria-label="Main navigation"'])if(!text.includes(required))errors.push(`${file}: missing ${required}`);
+ for(const ref of text.matchAll(/aria-(?:describedby|labelledby)="([^"]+)"/g))for(const id of ref[1].split(/\s+/))if(!ids.includes(id))errors.push(`${file}: missing accessible reference ${id}`);
  docs.set(file,{text,ids:new Set(ids)});
 }
 for(const [file,{text}] of docs){
@@ -35,6 +36,7 @@ for(const [file,{text}] of docs){
 }
 try{await stat(path.join(root,'assets/social-card.jpg'));await stat(path.join(root,'assets/Aldwyn-Website-Brief.txt'));}catch{errors.push('Missing social card or blank brief fallback');}
 const start=await readFile(path.join(root,'start/index.html'),'utf8');
+if(/<input[^>]*name="(?:name|email)"/.test(start))errors.push('The local planner must not ask for personal contact details.');
 // Catch stale service buttons and unconnected pages when the offer or routes change.
 const serviceValues=new Set([...start.matchAll(/<option value="([^"]+)"/g)].map(match=>match[1]));
 const extraValues=new Set([...start.matchAll(/name="extras" value="([^"]+)"/g)].map(match=>match[1]));

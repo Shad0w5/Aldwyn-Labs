@@ -131,3 +131,25 @@ Verification this pass:
 - Homepage evidence: docs/images/aldwyn-revised-home-2026-11-19.jpg. Source-review findings and research decisions saved with the build.
 
 Remaining: founder copy acceptance, real enquiry destination and delivery/data handling, approved prices/times/care terms, confirmed domain and applicable business information/policies, production host/metadata/indexing checks and explicit launch approval. No Lighthouse, production speed or client performance results claimed. No production deployment or Render branch change.
+
+
+## Approved focused revision — 20 November 2026
+
+Founder approved the preceding revision plan, with price/timing signals treated as the biggest remaining information gap and privacy review extended to the whole serving stack. Implemented sharper Home introduction and plain service labels; client-first portfolio with a smaller separate Studio project; real interior-page captures; Carwales 'Live website — development continues' status; consolidated one-package Care; consistent Project planner labels and visible local-only context; removed name/email fields and output lines; exact 1200 x 630 share image and metadata. No invented roles, historical decisions, results, prices, timelines, contacts or team claims.
+
+Checks and evidence:
+- Default build/static checks pass for ten documents. Added accessible-reference checking and a guard against name/email contact fields returning to the local planner. Configured-origin validation uses only synthetic https://example.com, followed by a default rebuild; no domain or indexing changed.
+- Browser inspected current desktop Home, Services at tablet width, portfolio grouping, Sweeney interior-capture section and Care package. Narrow portfolio and fixed mobile actions inspected; Menu opened and Escape closed it. Planner disclosure is outside collapsed navigation and was visible at 768 and 390px frame widths.
+- Thirty layout samples: all ten documents at 320/390/768px frame widths, content widths 305/375/753px, no document horizontal overflow and JS initialized. This is responsive sampling, not exhaustive device/browser certification.
+- All six planner choices tested through description, optional details, review and edit. Empty description remains on step 1 and is invalid. Care disables extras and excludes them from output. Initial improvements+connection query selected both. No name/email input or output lines. Synthetic data only; nothing sent. Copy status succeeded and dynamic Save produced a download event/path. The downloaded file was not independently opened.
+- A no-app-script mirror had no JS initialization class, kept the blank template link visible and left submit disabled. This is an app-script fallback check, not a full browser-JavaScript-disabled certification. Temporary QA pages removed by final build.
+- Native Care summary opened using Enter. Existing local links, anchors, allowlisted service queries and no-transmission/storage safeguards pass static checks.
+- New Sweeney About and Carwales radio-catalogue screenshots are actual 1348 x 926 desktop captures. Both sites were navigated read-only; no client content or settings changed. Mobile client captures were unavailable through supported controls and were not fabricated. Captions identify desktop views.
+- The clipped screenshot API timed out again. Captured the working viewport and extracted the exact fixed top-left card canvas (1200 x 630), without altering its contents. Export dimensions and metadata match; public-platform preview/crop testing remains pending. New JPGs decode successfully.
+- Lighthouse is not installed in the available environment. No numeric performance, accessibility or SEO badge added. Source checks and layout samples do not establish a Lighthouse score.
+
+Independent source critic rated editorial clarity 8/10 (subjective copy assessment) and found two issues: tablet planner disclosure was hidden inside the collapsed menu; Care guidance mentioned a nonexistent platform field. Both corrected, with affected browser/source rechecks. No further consequential source blocker reported.
+
+Privacy/launch record: docs/LAUNCH-READINESS.md inventories host/CDN/security metadata, local planner state and export, external links, and any future analytics/contact processing. Actual static-host logging fields, purposes, recipients, transfers and retention remain unverified. General Render web-service logging tables were not assumed to describe this static site. Render policy/DPA URLs were located, but the reader did not return substantive terms; no policy review or legal-compliance completion claimed. No public privacy notice invented. Official source URLs contain no tracking parameters.
+
+Evidence: docs/images/aldwyn-home-refined-2026-11-20.jpg, aldwyn-care-refined-2026-11-20.jpg and aldwyn-portfolio-refined-2026-11-20.jpg. Review branch/PR #3 only; no production deploy or Render branch update. Next: founder reviews the revision, approves realistic price/timing/Care figures and provides the actual domain and enquiry destination; verify whole-site provider processing before final policy and launch.

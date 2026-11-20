@@ -28,7 +28,7 @@ export const projects = [
       },
       {
         "title": "About the firm",
-        "text": "Firm and team information provides context alongside the service pages."
+        "text": "The About page introduces the practice and its legal work; a separate team page provides further information."
       },
       {
         "title": "Appointments",
@@ -36,14 +36,24 @@ export const projects = [
       }
     ],
     "decisions": [],
-    "progress": "Live website. The preview links open the current site in a new tab."
+    "progress": "Live website. The preview links open the current site in a new tab.",
+    "gallery": [
+      {
+        "src": "/assets/projects/pj-sweeney-about.jpg",
+        "width": 1348,
+        "height": 926,
+        "alt": "Patrick J. Sweeney Solicitors About page with practice information and navigation",
+        "title": "Introduce the practice",
+        "caption": "The About page sits alongside legal services, team information and contact routes. Desktop capture · 20 November 2026."
+      }
+    ]
   },
   {
     "slug": "carwales",
     "title": "Carwales",
     "category": "Automotive catalogue & showroom",
     "type": "Website project",
-    "status": "Live · In progress",
+    "status": "Live website — development continues",
     "liveUrl": "https://carwales.ie/",
     "preview": {
       "src": "/assets/projects/carwales.jpg",
@@ -62,7 +72,7 @@ export const projects = [
     "notes": [
       {
         "title": "Product catalogue",
-        "text": "Car-electronics categories organise the equipment range for browsing."
+        "text": "Product categories lead to listings with search, sorting and filters for details such as vehicle make and screen size."
       },
       {
         "title": "Vehicle showroom",
@@ -74,7 +84,17 @@ export const projects = [
       }
     ],
     "decisions": [],
-    "progress": "Live, with further work in progress."
+    "progress": "The catalogue and vehicle showroom are live. Development is continuing.",
+    "gallery": [
+      {
+        "src": "/assets/projects/carwales-catalogue.jpg",
+        "width": 1348,
+        "height": 926,
+        "alt": "Carwales radio catalogue with category navigation, filters and product listings",
+        "title": "Browse the equipment range",
+        "caption": "The radio catalogue combines product listings with search, sorting and filters. Desktop capture · 20 November 2026."
+      }
+    ]
   },
   {
     "slug": "aldwyn-labs",

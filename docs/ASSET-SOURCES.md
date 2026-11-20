@@ -33,3 +33,10 @@ Editable HTML/CSS source: src/social-card.html. Export: dist/assets/social-card.
 
 
 The social-card export was refreshed during the copy rethink with 'Business websites. Considered from the start.' Source assets and dimensions remain as above. Homepage review evidence: docs/images/aldwyn-revised-home-2026-11-19.jpg, captured from the managed review preview.
+
+
+## Interior website captures — 20 November 2026
+
+Actual desktop browser captures from the founder-authorised project sites: https://www.pjsweeney.ie/about.html and https://carwales.ie/c/radios. Saved as dist/assets/projects/pj-sweeney-about.jpg and carwales-catalogue.jpg, each 1348 x 926 JPEG. These are page views, not mobile renders, new design concepts, client endorsements or evidence of outcomes. No client content or implementation was modified. Mobile client captures were not available through the supported browser controls; none fabricated.
+
+Social-card source is now a fixed top-left 1200 x 630 HTML canvas. Browser clipped capture timed out; a successful viewport screenshot was cropped exactly to that rendered canvas, without changing its design. Export dimensions and OG metadata are 1200 x 630. Public platform previews remain pending.
