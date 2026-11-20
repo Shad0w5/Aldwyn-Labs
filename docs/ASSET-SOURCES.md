@@ -30,3 +30,6 @@ Generated with the built-in image tool on 19 November 2026 for Home/Studio inter
 ## Social card — 19 November 2026
 
 Editable HTML/CSS source: src/social-card.html. Export: dist/assets/social-card.jpg, native browser viewport capture, 1363 × 936 JPEG. Uses the unchanged approved logo-web.svg, licensed local fonts and the existing authorised client homepage captures. No new client outcomes or logo geometry. Clipped capture API timed out; full viewport export with central safe composition retained. Public-origin configuration and social-platform crop checks remain launch tasks.
+
+
+The social-card export was refreshed during the copy rethink with 'Business websites. Considered from the start.' Source assets and dimensions remain as above. Homepage review evidence: docs/images/aldwyn-revised-home-2026-11-19.jpg, captured from the managed review preview.

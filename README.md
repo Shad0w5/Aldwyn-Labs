@@ -73,7 +73,7 @@ The brief builder is functional for preparation, copy and download only. Confirm
 
 ## Feedback revision — 19 November 2026
 
-The homepage now features a real project, specific benefit-led copy and a pre-launch enquiry notice. The original overlapping landscape portfolio card is retained. Studio explains the one-person working relationship. Client project notes describe verified site features; delivery roles, technologies and outcome metrics are not invented. The Aldwyn project documents the actual static stack.
+The homepage now features a real project and a direct introduction to the website offer; enquiry availability is explained at the brief entry point. The original overlapping landscape portfolio card is retained. Studio explains the design approach without headcount positioning. Client project notes describe verified site features; delivery roles, technologies and outcome metrics are not invented. The Aldwyn project documents the actual static stack.
 
 The brief is progressively enhanced into three steps: goal, optional details, review/save. Only the project description is required; name/email are optional and collapsed. Care still disables extras. A blank `/assets/Aldwyn-Website-Brief.txt` is generated for an offline/no-JavaScript fallback. This remains local preparation, not enquiry delivery. Mobile quick actions are omitted on Start and 404 to avoid covering the form. Small process reveals respect reduced motion.
 
@@ -82,3 +82,8 @@ The brief is progressively enhanced into three steps: goal, optional details, re
 Builds can take `PUBLIC_SITE_URL` as an HTTPS origin once the actual domain is confirmed. It supplies absolute canonical/og:url/share-image URLs; without it, canonical/og:url are omitted and the image path is local for review. A synthetic `https://example.com` configuration was tested and removed; it is not a business domain. Indexing remains disabled regardless of that variable. Configure real origin and launch indexing separately, then test social previews. No domain, inbox, phone, booking service, analytics, legal details or pricing was invented.
 
 Current evidence is docs/images/feedback-home-2026-11-19.jpg. See the latest VALIDATION section for browser limitations, including the final refresh that stopped initialising scripts.
+
+
+## Current editorial direction
+
+Founder rejected copy that echoed review feedback and asked to remove solo-person messaging. Use a calm studio voice without staffing claims. Home introduces the offer and work; Services explains project choices; Studio explains the content/design approach; Care describes the continuing service. Internal acceptance, tests and implementation commentary belong in documentation rather than public project notes. Project-brief actions must describe local preparation rather than imply a conversation or submission. The latest research and two independent source-review ratings are recorded in DESIGN-RESEARCH.md and VALIDATION.md.

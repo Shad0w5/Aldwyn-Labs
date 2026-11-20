@@ -78,8 +78,10 @@ function updateServiceFields() {
   extraFields.hidden = care;
   extraFields.disabled = care;
   document.querySelector('#service-choice-note').textContent = care
-    ? 'For care, tell us what needs updating or looking after. Add the website address on the next step if you have it.'
-    : 'Choose a starting point. We can work out the details later.';
+    ? 'Add the website address and any platform details on the following step.'
+    : 'Choose the closest option. You can add the details below.';
+  document.querySelector('label[for="message"]').textContent = care ? 'What needs updating or looking after?' : 'What would you like to build or change?';
+  form.elements.message.placeholder = care ? 'For example: updating service information and photographs, with help maintaining the existing site.' : 'For example: a five-page site for our practice, with a service page, a gallery and appointment enquiries.';
 }
 updateServiceFields();
 projectType.addEventListener('change', updateServiceFields);
@@ -103,7 +105,7 @@ form.addEventListener('submit', event => {
   const selectedExtras = data.getAll('extras').filter(value => Object.hasOwn(extras, value)).map(value => extras[value]);
   briefText.value = ['ALDWYN LABS — PROJECT BRIEF', '', `Name: ${name || 'Not provided'}`, `Email: ${email || 'Not provided'}`, `Business: ${String(data.get('business')).trim() || 'Not provided'}`, `Existing website: ${String(data.get('website') || '').trim() || 'Not provided'}`, `Project: ${projectType.selectedOptions[0].textContent}`, ...(projectType.value === 'care' ? [] : [`Optional extras to discuss: ${selectedExtras.join(', ') || 'None selected'}`]), '', 'What I have in mind:', message, '', 'Scope and costs are subject to agreement.', 'Prepared locally. This brief has not been sent to Aldwyn Labs.'].join('\n');
   showStep(2);
-  setStatus('Your brief is ready. Save or copy it below. Nothing has been sent.');
+  setStatus('Your brief is ready to review.');
 });
 form.addEventListener('input', event => {
   if (event.target !== briefText && !result.hidden) {

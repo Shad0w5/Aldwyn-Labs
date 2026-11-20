@@ -26,7 +26,7 @@ Use large editorial typography, restrained photographic texture and larger real 
 
 Retain the small Node static generator with shared navigation, metadata and footer, tracked generated dist output and no application dependencies. Studio now has its own page module. Responsive imagery is locally encoded as WebP (800px and 1600px widths). No remote image/font requests, analytics or application storage are added. The asset checker now parses each srcset candidate separately.
 
-The local brief builder retains four service options, an optional existing URL and approved extras. It validates, prepares plain text, invalidates stale output and offers copy/download. Care hides and disables extras. Nothing is sent to Aldwyn. A clear local-only note appears before the form and beside the action.
+The local brief builder retains six service options, an optional existing URL and approved extras. It validates, prepares plain text, invalidates stale output and offers copy/download. Care hides and disables extras. Nothing is sent to Aldwyn. A clear local-only note appears before the form and beside the action.
 
 ## Cloud and deployment boundary
 
@@ -76,3 +76,12 @@ Founder supplied a markup-based review and asked to improve the site. Accepted i
 Decisions: keep exact approved logo/palette, native controls and dependency-free static stack. One bounded care plan remains; no unapproved prices, tiers, timeframes or performance/client outcomes. No external contact/account setup or deployment. The domain is already purchased but its name remains unconfirmed. Render static-site cold-start criticism is inapplicable to static hosting (official Render static/free documentation checked). A professional-service schema, public indexing/sitemap, real policies and analytics are not guessed into the review build.
 
 Acceptance: build/check default and configured-origin paths; all six brief choices and care boundaries; validation, back/edit, copy/download; no horizontal page overflow at sampled widths; exact asset geometry; real portfolio status; honest launch dependencies. Next action: founder review, then confirm actual domain and a reachable inbox before implementing enquiry delivery and relevant data handling.
+
+
+## Current copy revision — 19 November 2026
+
+This decision supersedes the preceding feedback pass's one-person positioning. The founder rejected copy that sounded like pasted review feedback and explicitly requested no solo-person messaging. Rewrote all public page introductions, headings, service explanations, care descriptions and project notes in an independent studio voice. No invented team claims. Retained the exact identity, existing artwork, real portfolio status, landscape portfolio card, service scope and local-only brief behavior. Removed internal acceptance/testing narrative from public project pages and reduced repeated scope lists.
+
+Acceptance: each page has a distinct purpose; no headcount messaging; benefits and practical descriptions precede necessary scope boundaries; no unsupported contacts, fees, delivery times or results; accurate brief labels and care state; build and route checks pass; revised desktop openings and narrow layout samples reviewed. Research covered Fhoke, aurelo and Built by Buffalo. Two critics reviewed before and after and their remaining substantive suggestions were applied.
+
+Status: saved for review on website/editorial-polish / PR #3. Do not merge into the Render-connected branch or deploy without founder approval. Next: founder reviews the new copy and then confirms a real domain/inbox before enquiry delivery is implemented.
