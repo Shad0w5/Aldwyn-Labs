@@ -1,87 +1,130 @@
-// Portfolio source. Add a new object only when its content and public use are approved.
-// Keep status explicit: for example, In progress, Concept or Live.
-// Every project needs a unique URL-safe slug. Case-study pages are generated automatically.
-// Leave out confidential names, unverified results and external links without permission.
-// For another project, add preview: {src: '/assets/projects/file.webp', alt: '...', caption: '...'}.
-// Only use an approved image of that project. Without one, a neutral preview panel is shown.
+// Approved portfolio facts only. Keep project status explicit; add verified detail rather than padding the case studies.
 export const projects = [
   {
-    slug: 'pj-sweeney',
-    title: 'Patrick J. Sweeney Solicitors',
-    category: 'Legal services website',
-    type: 'Website project',
-    status: 'Live website',
-    liveUrl: 'https://www.pjsweeney.ie/',
-    preview: {
-      src: '/assets/projects/pj-sweeney.jpg',
-      alt: 'Patrick J. Sweeney Solicitors homepage with a riverside photograph and appointment navigation',
-      caption: 'Live homepage capture · 19 November 2026'
+    "slug": "pj-sweeney",
+    "title": "Patrick J. Sweeney Solicitors",
+    "category": "Legal services website",
+    "type": "Website project",
+    "status": "Live website",
+    "liveUrl": "https://www.pjsweeney.ie/",
+    "preview": {
+      "src": "/assets/projects/pj-sweeney.jpg",
+      "alt": "Patrick J. Sweeney Solicitors homepage with a riverside photograph and appointment navigation",
+      "caption": "Live homepage capture · 19 November 2026"
     },
-    summary: 'A website for a solicitor practice, bringing its service information, team and appointment contact routes together.',
-    disciplines: ['Business website', 'Legal services', 'Appointment information'],
-    briefLabel: 'The website',
-    briefHeading: 'Legal services, clearly presented.',
-    brief: 'The current site introduces Patrick J. Sweeney Solicitors and presents its practice areas alongside information about the firm, its team and ways to request an appointment.',
-    decisions: [],
-    scopeLabel: 'Website overview',
-    scopeHeading: 'Explore the live site.',
-    scope: ['Practice-area and service information', 'About and team pages', 'Contact details and appointment enquiry routes'],
-    progress: 'The website is live. Use the live preview to explore its current pages.'
-  },
-  {
-    slug: 'carwales',
-    title: 'Carwales',
-    category: 'Automotive catalogue & showroom',
-    type: 'Website project',
-    status: 'Live · In progress',
-    liveUrl: 'https://carwales.ie/',
-    preview: {
-      src: '/assets/projects/carwales.jpg',
-      alt: 'Carwales homepage showing car-electronics categories, catalogue navigation and a vehicle showroom',
-      caption: 'Live homepage capture · 19 November 2026'
-    },
-    summary: 'An automotive website with a car-electronics catalogue, vehicle showroom and routes to ask about products and availability.',
-    disciplines: ['Product catalogue', 'Vehicle showroom', 'Website in progress'],
-    briefLabel: 'The website',
-    briefHeading: 'A catalogue and a showroom.',
-    brief: 'The live website brings car equipment and vehicle listings into separate browsing areas. Visitors can explore categories, search the catalogue and follow enquiry routes.',
-    decisions: [],
-    scopeLabel: 'Website overview',
-    scopeHeading: 'Explore the current build.',
-    scope: ['Car-electronics categories and product listings', 'Separate vehicle showroom', 'Catalogue search and enquiry routes'],
-    progress: 'The website is live, with further refinements in progress. This entry shows the current build.'
-  },
-  {
-    slug: 'aldwyn-labs',
-    title: 'Aldwyn Labs',
-    category: 'Studio website',
-    type: 'Self-initiated project',
-    status: 'In progress',
-    artwork: 'aldwyn',
-    summary: 'A considered home for an independent digital studio. Built around a distinctive identity, clear services and room for work to grow.',
-    disciplines: ['Website design', 'Front-end development', 'Portfolio structure'],
-    brief: 'Create a website for Aldwyn Labs that makes the offer easy to understand: business websites, with optional website care. Give the studio a clear visual voice and a dedicated place to share projects as they develop.',
-    decisions: [
+    "summary": "Practice information, legal services and appointment enquiries for Patrick J. Sweeney Solicitors.",
+    "disciplines": [
+      "Business website",
+      "Legal services",
+      "Appointment information"
+    ],
+    "briefLabel": "The website",
+    "briefHeading": "Legal services, clearly presented.",
+    "brief": "The website introduces the practice and its services, with supporting information about the firm and routes to request an appointment.",
+    "notes": [
       {
-        title: 'An identity that holds together.',
-        text: 'The chosen interlocking AL monogram stays consistent across the site. Dark aubergine and plum provide the foundation; iris is reserved for emphasis, selected artwork and important actions.'
+        "title": "Practice areas",
+        "text": "Service pages organise the legal work offered by the practice."
       },
       {
-        title: 'A page for each useful question.',
-        text: 'Services explain the website offer. Website Care describes the boundaries of ongoing support. The Studio introduces the approach, while the Portfolio gives individual projects space for their story.'
+        "title": "About the firm",
+        "text": "The About page introduces the practice and its legal work; a separate team page provides further information."
       },
       {
-        title: 'A quieter way to show the work.',
-        text: 'Project status and context are visible beside the design. This entry documents the studio’s own website while it is being developed, including the choices that guide its structure and visual direction.'
+        "title": "Appointments",
+        "text": "Contact details and an appointment request route sit within the main navigation."
       }
     ],
-    scope: [
-      'A shared visual system across the main website pages',
-      'A portfolio with individual project stories',
-      'Layouts designed to adapt to desktop and mobile',
-      'A local brief-preparation tool for the project-start page'
+    "decisions": [],
+    "progress": "Live website. The preview links open the current site in a new tab.",
+    "gallery": [
+      {
+        "src": "/assets/projects/pj-sweeney-about.jpg",
+        "width": 1348,
+        "height": 926,
+        "alt": "Patrick J. Sweeney Solicitors About page with practice information and navigation",
+        "title": "Introduce the practice",
+        "caption": "The About page sits alongside legal services, team information and contact routes. Desktop capture · 20 November 2026."
+      }
+    ]
+  },
+  {
+    "slug": "carwales",
+    "title": "Carwales",
+    "category": "Automotive catalogue & showroom",
+    "type": "Website project",
+    "status": "Live website — development continues",
+    "liveUrl": "https://carwales.ie/",
+    "preview": {
+      "src": "/assets/projects/carwales.jpg",
+      "alt": "Carwales homepage showing car-electronics categories, catalogue navigation and a vehicle showroom",
+      "caption": "Live homepage capture · 19 November 2026"
+    },
+    "summary": "A car-electronics catalogue and vehicle showroom, with enquiries about products and availability.",
+    "disciplines": [
+      "Product catalogue",
+      "Vehicle showroom",
+      "Website in progress"
     ],
-    progress: 'The multi-page website is being developed and reviewed. Typography and interface details remain open to refinement. The site is not published, and the brief tool does not send an enquiry.'
+    "briefLabel": "The website",
+    "briefHeading": "A catalogue and a showroom.",
+    "brief": "Car equipment and vehicles have separate browsing areas. The site presents the product range through categories and search, alongside a dedicated showroom.",
+    "notes": [
+      {
+        "title": "Product catalogue",
+        "text": "Product categories lead to listings with search, sorting and filters for details such as vehicle make and screen size."
+      },
+      {
+        "title": "Vehicle showroom",
+        "text": "Vehicle listings have their own area, separate from the product catalogue."
+      },
+      {
+        "title": "Search and enquiries",
+        "text": "Catalogue search and enquiry routes help visitors follow up on an item."
+      }
+    ],
+    "decisions": [],
+    "progress": "The catalogue and vehicle showroom are live. Development is continuing.",
+    "gallery": [
+      {
+        "src": "/assets/projects/carwales-catalogue.jpg",
+        "width": 1348,
+        "height": 926,
+        "alt": "Carwales radio catalogue with category navigation, filters and product listings",
+        "title": "Browse the equipment range",
+        "caption": "The radio catalogue combines product listings with search, sorting and filters. Desktop capture · 20 November 2026."
+      }
+    ]
+  },
+  {
+    "slug": "aldwyn-labs",
+    "title": "Aldwyn Labs",
+    "category": "Studio website",
+    "type": "Self-initiated project",
+    "status": "In progress",
+    "artwork": "aldwyn",
+    "summary": "The Aldwyn studio website: a shared visual identity, service pages and a growing portfolio.",
+    "disciplines": [
+      "Website design",
+      "Front-end development",
+      "Portfolio structure"
+    ],
+    "brief": "The website brings Aldwyn’s services and project work into one place. Built with HTML, CSS and JavaScript, it uses a shared page system to carry the identity across the site.",
+    "notes": [],
+    "decisions": [
+      {
+        "title": "An identity with structure",
+        "text": "The angular AL monogram informs the restrained geometric artwork. Aubergine and plum provide the setting, with iris used for emphasis and actions."
+      },
+      {
+        "title": "Space for the work",
+        "text": "A landscape portfolio feature introduces the client sites. Individual project pages add context, screenshots and an explicit status."
+      },
+      {
+        "title": "A project planner",
+        "text": "A short guided brief lets visitors organise their requirements and save a copy. The interface starts with the project itself and leaves additional details optional."
+      }
+    ],
+    "progress": "In development. The studio website and project planner are being refined before launch."
   }
 ];
-

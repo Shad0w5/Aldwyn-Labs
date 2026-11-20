@@ -1,45 +1,155 @@
-# Validation — 19 November 2026
+# Latest imagery revision — 19 November 2026
 
-## Homepage portfolio card refinement
+- Three generated artworks visually inspected in generation output; no text, invented client UI, team or logo introduced. Six local WebP encodings are 640/1120px wide, all below 50KB each. Shared helper emits dimensions, responsive srcset, decorative empty alt and a readable caption.
+- npm run build and npm run check pass for nine pages. Prior portfolio and local brief behavior are unchanged.
+- New browser refresh was rejected by the cloud browser URL security policy. No workaround attempted. Earlier browser and screenshot evidence below applies to the previous architecture-photo revision, not this new imagery layout. Fresh desktop/phone visual acceptance remains pending.
+- Independent critic reviewed the final source and found no blocking issue: old grayscale/sizing rules are overridden, Care remains square, decorative alt text is appropriate and WebP descriptors match assets. Rendered crop/height remains unverified.
+- No deployment, DNS, purchases or contact delivery added. Changes remain on website/editorial-polish.
 
-Replaced the two homepage project cards with one landscape portfolio card. The two actual website screenshots overlap on the left; portfolio introduction, project names/status and a single “Explore our portfolio” link sit on the right. The card stacks vertically at narrower CSS breakpoints. Individual project pages and live-preview links remain on the portfolio page.
+# Validation — editorial redesign, 19 November 2026
 
-`npm run build` and `npm run check` passed for nine pages after the change. Source layout and responsive rules were self-reviewed. Fresh visual/browser verification was blocked: the existing cloud tab timed out at Page.enable, tab inventory timed out, and a fresh tab attempt also timed out. No new screenshot or successful browser-layout check is claimed for this card. Earlier browser checks below refer to their respective earlier revisions.
+These checks apply to website/editorial-polish based on 8c7344e. Earlier checks of the previous layout do not establish the current layout's behavior. This review does not publish the redesign or change Render.
 
-## Services and care refinement
+## Automated
 
-- `npm run build` and `npm run check` pass for nine pages. The link checker now resolves query-bearing local routes and HTML-encoded query separators before checking paths/anchors.
-- Separate implementation and content/UX critic agents reviewed the work. Fixed a pre-existing malformed service selector (care and guidance were missing opening option tags) and removed wording that could imply marketing campaigns or checkout were currently available as extra services.
-- Desktop Services and Care inspected at 1363px viewport width; no horizontal overflow. Actual new-site/showcase and care buttons navigated to the local brief with the expected selection. All four native select options appeared correctly. Extra checkboxes and the optional existing website address were visible and labelled.
-- Synthetic review@example.com flow: new-site brief contained the selected showcase and existing URL; clipboard copy included them; changing to care invalidated old output, hid and disabled extras, and generated a care brief without extras. Download event succeeded. Invalid URL was rejected natively. Unknown service and extra query values were ignored.
-- Services, Care, care brief and showcase brief were checked in same-origin browser frames at 390/320/768px outer widths (375/305/753px content widths). All twelve checks had scrollWidth equal to clientWidth. Care preselection and showcase checkbox selection remained correct at each width. Mobile menu closed with Escape; native care FAQ could be expanded with the keyboard.
-- Checks remain Chromium browser/frame checks, not physical-device or full cross-browser certification. No real enquiry delivery, service purchase, contact transmission or production publication occurred. Final fees, allowances, task frequencies and response/cancellation terms are still open.
+- npm run build: nine pages generated from the shared shell and page modules; stale HTML (including the temporary responsive harness) removed, permanent assets retained.
+- npm run check: application/build JavaScript syntax, unique IDs, one H1 per page, metadata/noindex/main navigation, local assets/routes, query-bearing links, cross-page anchors and safe approved external links pass.
+- The asset checker now validates each srcset candidate rather than treating a candidate list as one path.
+- Brief HTML submit remains disabled until local handling is installed. No form action/GET delivery and no application fetch/XHR/beacon/browser-storage APIs are present.
 
-## Automated checks
-- `npm run build`: seven pages generated with shared chrome and page metadata.
-- `npm run check`: JavaScript syntax; unique IDs; one H1 per page; description/title/noindex presence; all local assets, route links and cross-page anchors resolve; HTML submit initially disabled; no form action/GET delivery; no fetch, beacon, XHR or application browser-storage APIs in the site script.
-- Stale generated-page removal: a temporary retired route was removed on rebuild, while brand/font assets remained. Invalid and duplicate route descriptors are rejected before files are written.
+## Browser checks
 
-## Browser observations
-Supported Work preview, Chromium desktop viewport 1363px. Home, Services, Portfolio, project detail, Studio, Website Care and Start routes visited through native links. Homepage and main editorial layouts inspected; local fonts and images loaded. No horizontal overflow on the desktop home and project-detail checks. Care FAQ opened with native details controls.
+Supported ChatGPT Work preview at http://127.0.0.1:4173/, Chromium. Desktop viewport was approximately 1363px wide (1348px content with scrollbar at some observations).
 
-Phone layouts were checked through a temporary same-origin iframe harness, not a physical device or mobile browser emulator. Outer widths 390px and 320px produced inner content widths 375px and 305px with the browser scrollbar. All seven routes at 305px content width had scrollWidth equal to clientWidth after a correction to the project-start heading/grid sizing. Studio additionally checked at 753px content width (768px outer). Home at 375px inspected visually. Mobile menu opened, Escape closed it. The narrow header uses the supplied full monogram rather than shrinking the wordmark.
-
-The brief builder was exercised using synthetic review@example.com data: valid preparation, correct unsent message, clipboard copy, successful download event, and hiding stale output after an input change. Native invalid-email and trimmed message rejection were verified. Keyboard Tab from a field moved focus to the next field with visible focus. No live enquiry delivery exists to test.
+- Home, Services, Care, Portfolio, Studio, Start and P.J. Sweeney detail visited. Homepage hero, actual project imagery, landscape overlapping work card, portfolio rows, care plan panel, studio and form layouts inspected. Homepage and inspected detail had equal scroll/client width; loaded image checks showed no broken images at the inspected positions.
+- All nine routes were visited in a temporary same-origin iframe at 390, 320 and 768px outer widths, producing 375, 305 and 753px content widths. All 27 checks had scrollWidth equal to clientWidth and the expected H1. This is browser-frame QA, not physical-device emulation.
+- Phone home and tablet home/studio inspected visually. Mobile menu opened; Escape closed it and returned focus to the toggle. The native care FAQ opened with Enter. Sticky header and visible keyboard focus were observed.
+- Actual “Shape your care brief” and “Discuss a showcase” links opened Start with the expected selection. Care hid/disabled the extras fieldset; showcase preselected the approved checkbox. Four service options remained available.
+- With synthetic review@example.com data, a care brief included the existing URL and omitted extras, displayed the unsent message, copied the correct text and raised a successful download event. Changing to redesign hid stale output and restored extras. An invalid existing URL was rejected by native validation, with focus on the URL field. No real contact data was transmitted or enquiry delivered.
 
 ## Independent review
-A separate critic checked code and content. Fixed supported findings: guard form initialization on pages without a form; remove stale generated portfolio HTML; distinguish visual parent-navigation selection from exact-page aria-current semantics; replace the obsolete one-page README. A phone-width overflow found during browser QA was corrected and rechecked.
 
-## Limits and next acceptance
-This is not an exhaustive accessibility, security, performance or cross-browser audit. No physical-device/Safari/Firefox checks, live email delivery, production DNS/hosting, domain-specific indexing or launch acceptance were performed. Narrow-browser-frame QA does not establish physical-device behavior. Fonts and UI details remain recommendations for founder review. Contact delivery, final portfolio permissions/content, destination and launch authorization are required before production.
+Two page implementation agents and a separate critic reviewed the integrated source. The critic found no consequential content or UI-contract defect. Their only check failure came from the intentionally temporary QA HTML; it was removed by the final rebuild before the final successful checks. The critic requested tablet hero/menu verification, which was performed.
 
-## Portfolio additions — 19 November 2026
+## Evidence
 
-Founder supplied https://www.pjsweeney.ie/ and https://carwales.ie/ and explicitly requested portfolio entries with live previews. Both homepages were opened in the supported cloud browser and captured at 1348 × 926 pixels. Screenshots are stored locally with descriptive alternative text and capture-date captions. Descriptions use observable navigation/content, not invented delivery scope or measured outcomes. Carwales remains live / in progress; final acceptance is unconfirmed.
+Viewport captures are stored in docs/images/:
+- editorial-home-2026-11-19.jpg
+- editorial-work-2026-11-19.jpg
+- editorial-care-2026-11-19.jpg
 
-Both sites prevent cross-origin embedded display. Carwales returned X-Frame-Options: sameorigin; a real P.J. Sweeney iframe attempt displayed “refused to connect”. The final implementation contains no embedded remote frame, proxy or automatic third-party request. Native live-preview links open the approved HTTPS URLs with target=_blank and rel=noopener noreferrer. Browser clicks opened new tabs at the expected URLs; direct homepage views were independently observed. No external form, enquiry, basket, purchase or client-site change was submitted.
+A full-page export produced inconsistent responsive-logo rendering despite normal viewport/DOM observations; that export is not included as evidence. The saved captures use the live viewport screenshot API.
 
-`npm run build` and `npm run check` pass for nine pages. The checker permits only the two intended external link destinations, still disallows remote assets/other endpoints and checks new-tab protections. Actual preview images loaded. Desktop Carwales project-detail width was 1363px with no horizontal overflow. Portfolio listing, both new detail pages and the updated Home were checked in a 320px outer iframe / 305px inner content width; all had scrollWidth equal to clientWidth. The temporary QA harness was removed from the final build.
+The new photograph is locally hosted in two WebP encodings: 173806 bytes (1600px width) and 42498 bytes (800px width). Existing local fonts and project snapshots are retained. No Lighthouse score, field performance measurement or cross-browser certification is claimed.
 
-A separate critic checked the additions: no consequential defect found. Corrected the screenshot dimensions in markup and CSS to their actual 1348 × 926 ratio and updated the page-count documentation. Screenshots are dated snapshots and need recapturing when client sites change. This remains an unpublished review build.
+## Limits and launch work
 
+No Safari/Firefox or physical-device checks, full accessibility/security audit, email delivery, production DNS/hosting change or launch acceptance performed. Browser extension metadata errors appeared in the tool console; these are not attributed to the website application. All pages remain noindex/nofollow, which is not access control.
+
+The founder's existing Render URL is separate from this isolated review branch. Its final settings and live behavior need a separate check before deployment. Business contact details and real enquiry handling, custom domain, final care terms, tiny favicon and founder visual approval remain open.
+
+## Retained project-source observations
+
+The founder requested https://www.pjsweeney.ie/ and https://carwales.ie/ as portfolio entries. Both were captured at 1348 × 926 on 19 November 2026. Carwales returned X-Frame-Options: sameorigin; a real P.J. Sweeney iframe attempt refused to connect. The portfolio therefore uses dated screenshots and protected native new-tab links, with no remote iframe or bypass. Copy describes observable features and accurate status, without invented delivery roles or measured outcomes. Neither client site was modified.
+
+
+## Wordmark, interior imagery and care package — 19 November 2026
+
+Founder requested larger Aldwyn Labs lettering beside AL, more appropriate images beyond headers and a more developed care package. Added logo-web.svg as a website-specific lockup: exact monogram and outlined letter paths preserved, Aldwyn scaled uniformly 1.4x and LABS 1.6x within the lockup. Original logo.svg remains unchanged. Header/footer use the new version; the compact monogram remains at the narrow breakpoint.
+
+Added a generated website-planning study inside Home and Studio process sections, actual project captures inside Services, and three native SVG illustrations explaining Care requests, updates and checks. Images support the adjacent content. Project status and local-only brief handling remain unchanged.
+
+Care now presents one Website Care package with a quote-after-review label, maintenance scope matrix, optional content allowance, support/recovery responsibilities, exclusions and an illustrated request workflow. No prices, hours, task cadence, response guarantee or cancellation terms invented.
+
+Nine-page build and static checks pass. XML checks confirm valid SVG, unchanged AL construction and identical letter outlines. Latest browser layout acceptance remains pending due to the previously encountered cloud URL security restriction; no new browser screenshot or full rendered-layout check is claimed. Review branch only; no deployment.
+
+
+## Studio layout correction — 19 November 2026
+
+User reported the Studio page looked broken. The current preview loaded correctly; no missing CSS/assets or horizontal overflow was reproduced. Visual inspection found the process artwork isolated at the left of a wide section, separated from its steps. Replaced that arrangement with a shared two-column grid: full 3:2 artwork on the left and numbered steps on the right. It stacks at 820px. Removed the old Studio-specific crop/margin overrides from shared site CSS. Brand, copy, services and publication settings remain unchanged.
+
+Validation: npm run build and npm run check passed for all nine pages. The managed preview browser became accessible this turn. Visually inspected desktop hero and process and the 390px framed mobile process. DOM layout checks at iframe widths 320, 390, 768 and 1024px showed no horizontal overflow (content widths 305, 375, 753 and 1009px, excluding scrollbar). All three Studio images loaded at each width. This was a focused layout review, not a whole-site interaction retest. Temporary responsive harness removed before saving.
+
+Evidence: docs/images/studio-process-fixed-2026-11-19.jpg. Saved to website/editorial-polish for PR #3 review; no production deployment. Next: founder review of Studio preview. If the report concerns a different deployed version or section, capture that URL/view before diagnosing further.
+
+
+## Services revision — 19 November 2026
+
+Implemented founder-approved three-part website offer: Design & build (business websites, redesigns, landing pages), Improve & extend and Care & maintain. Added native section navigation, retained #website-extras for existing links, incorporated care artwork and clarified SEO/project/care/third-party boundaries. Landing-page and improvements choices now pass through the local brief builder. No new backend, platform dependency, pricing or deployment.
+
+Checks: npm run build and npm run check passed for all nine pages. Desktop Services hero, three project choices, improvements rows and care overview visually inspected. Framed narrow layout inspected; DOM overflow checks at frame widths 320/390/768/1024px passed (content widths 305/375/753/1009px). All four Services images loaded. Keyboard Enter activated the design section link and SEO FAQ. Browser checked landing-page CTA preselection and locally prepared text includes the landing-page choice and not-sent notice. Improvement connection CTA selected improvements + connection; changing to care hid and disabled extras. No actual information delivery is implemented or claimed. Temporary QA HTML removed before final build.
+
+Independent source critic found no blockers and suggested clarifying optional post-launch help and existing-site form guidance; both corrected. Scope of browser checks is the revised Services page and affected brief routes, not a full repeat of unrelated site flows. Screenshots: docs/images/services-revised-2026-11-19.jpg and services-care-overview-2026-11-19.jpg. Saved on website/editorial-polish for PR #3; Render branch unchanged. Next: founder visual review.
+
+
+## Whole-site integration checkpoint — 19 November 2026
+
+Scope: nine main pages plus generated 404.html; connect the approved frontend and fix cross-page inconsistencies. Updated Home services, footer improvement labels, favicon reference, error recovery and current README/AGENTS guidance. Added static guards for home reachability, known brief routes/extras and local CSS/font files.
+
+- npm run build and npm run check passed: ten HTML documents, local links/assets, cross-page anchors, unique IDs, headings, metadata, home reachability, service queries, CSS assets and local-only form safeguards.
+- Browser inspected Home, Services, Care, Portfolio, each of the three project detail routes, Studio, Start and direct 404 document. Followed listing/detail/back links and shared navigation, Services section links and 404 home recovery. Existing live-site buttons retain native protected new-tab links; remote sites were not re-tested this turn.
+- All ten documents checked in browser frames at 320, 390 and 768px widths (305, 375 and 753px content widths). No document horizontal overflow. The intentionally clipped rotated identity rule extends within its overflow-hidden artwork panel and does not widen the document. Narrow Home visually inspected; previous focused Services/Studio mobile checks remain supplementary evidence. This is responsive sampling, not a device/browser certification.
+- Mobile menu opens; Escape closes it. Native section-link and FAQ keyboard behavior was checked during the Services pass. Current menu also checked in the final Home frame.
+- Brief native required-field validation rejects empty input. All six project types produce the corresponding local project line; care omits extras. Early immediate DOM reads caught pending UI updates for new/care; rechecked after the UI settled and both passed. Copy reported success, a download event returned a file, and editing input hid stale output. No enquiry was transmitted. The downloaded file’s contents were not independently opened; its source text was inspected in the prepared brief.
+- Independent source critic found no blockers and confirmed new 404 wiring; stale README query/evidence references corrected. Browser log sampling returned extension metadata errors, not a site-code finding; this is not a guarantee of zero errors in every browser.
+- Temporary responsive QA HTML removed by final build. Final homepage evidence: docs/images/final-home-2026-11-19.jpg.
+
+Status: frontend integration checkpoint complete for review on website/editorial-polish (PR #3); no deployment or Render settings change. Remaining launch tasks: verified business contact destination and enquiry delivery/data handling, approved care pricing/allowances/support terms, domain and indexability/canonical/sitemap configuration, founder acceptance and launch permission. The direct 404 document renders; actual production missing-URL status/fallback mapping is unverified. Favicon references the exact existing monogram; a dedicated tiny-size redesign was not made. Next action: founder’s final frontend refinement.
+
+## Review-feedback improvement pass — 19 November 2026
+
+Goal: improve the visitor experience from the founder-supplied 65/100 review, without fabricating contacts, prices, project results, platforms or business details. The score was not independently reproduced and no replacement score is claimed.
+
+Implemented: work-led homepage hero with actual Sweeney screenshot; more concrete Home/Services/Care copy; truthful one-person Studio statement and clearer point of view; renamed process link; feature-based project notes and verified Aldwyn stack; progressive three-step local brief with only description required, optional identity/context and blank text fallback; mobile actions with safe-area clearance; reduced-motion-aware process reveals; social-card asset and optional PUBLIC_SITE_URL metadata. Existing AL/palette, landscape portfolio card, project status, noindex and review/deployment boundary retained.
+
+Checks completed:
+- Default build and static checks pass for nine main routes plus 404. Configured-origin build/check also passed using synthetic https://example.com; final output rebuilt without that variable. Canonical links are permitted only for each document’s exact configured-origin URL. This did not configure a real domain or change indexing.
+- Browser guided brief passed empty-description rejection, all six service choices, care omission of extras, optional identity (blank name/email), invalid optional email rejection, back/edit navigation, plain local output, copy status and a dynamic download event. Stage headings receive focus and the progress header scrolls into view. Service query parsing remains allowlisted. Earlier immediate route reads sometimes preceded deferred initialisation; final service preselection recheck is pending after the later browser failure below.
+- Browser inspected revised Home hero, Studio, guided brief and share-card layout. Thirty framed HTML/CSS layout samples at 320/390/768px (305/375/753px content widths) showed no document horizontal overflow; intentionally clipped identity artwork excluded from element overflow flags. Some later frame views had no app-initialisation class, so these do not certify the final mobile JavaScript interactions.
+- A no-app-script mirror showed all static controls and the always-visible blank template link. The browser download-event check for that static TXT timed out/reset the tool. File existence/content and links pass static checks; actual browser static download remains unverified. Temporary test mirrors removed by final build.
+- Two clipped Page.captureScreenshot attempts timed out. Exported the social card through the functioning viewport screenshot API instead; metadata matches its actual 1363 × 936 dimensions. Editable HTML source is retained. Public-origin and social-platform preview/crop acceptance remain pending.
+- All JPEG/WebP assets decoded with Pillow. Restored existing asset hashes match GitHub. Solid colour ratios: soft-white/aubergine 15.30, muted/aubergine 9.18, muted/plum 7.88, iris/aubergine and aubergine/iris 6.18. This is a core-palette check, not a full rendered accessibility audit. No Lighthouse, production speed or client-site performance scores are claimed.
+- Independent source critic found two issues (canonical checker and mobile safe-area clearance); both fixed. No other consequential source blockers reported.
+
+Browser limitation: after the successful guided-flow checks, later navigations showed an empty app-initialisation class. Direct asset inspection returned net::ERR_BLOCKED_BY_CLIENT; reported browsing issue b20afbfb-0b62-4a8c-a7ee-7c38931017e6. Final mobile menu/action-bar and post-refresh route rechecks remain open. No alternate browser/network route was used to bypass the denial, and no application change was made to compensate for the environment. Source syntax/build checks continue to pass. Final desktop screenshot: docs/images/feedback-home-2026-11-19.jpg.
+
+Launch dependencies unchanged: real inbox/contact delivery and data handling, confirmed purchased domain, approved fees/times/care terms, applicable business information/policies, public metadata/indexing/host checks and explicit launch approval. Analytics and ProfessionalService schema were not added speculatively. Render static sites do not spin down between requests; the cold-start criticism refers to free web services (official https://render.com/docs/static-sites and https://render.com/hosting/react checked). Open Graph image properties checked against https://ogp.me/.
+
+
+## Founder-requested copy rethink — 19 November 2026
+
+Goal: replace generic and review-shaped prose, remove solo-person messaging and establish distinct page purposes. This supersedes the previous public one-person Studio statement. Home/Services/Studio/Care, portfolio notes, brief wording, shared buttons and social-card text revised. Exact AL geometry, aubergine/iris palette, actual project screenshots and homepage landscape card preserved. No new business/contact/price/result claims. Engineering/test commentary removed from public project notes.
+
+Two real independent source critics reviewed before and after. Editorial critic: 6.5/10 to 8/10 overall; final specificity 7.5, naturalness 8, coherence 8, credibility 8.5. Visitor critic: usefulness 6.5 to 7.5, hierarchy 6 to 7.5, offer clarity 7 to 8, action clarity 5.5 to 8 and credibility 7.5 to 8. These are subjective copy/source ratings, not an overall website score or rendered accessibility/performance audit. Applied remaining findings: remove service-link interface narration, remove internal final-acceptance wording from Carwales, avoid repeating 'considered' in the Home lead. Critics reported no further consequential editorial blocker; case studies remain limited to confirmed facts.
+
+Verification this pass:
+- npm run build and npm run check pass for nine main pages plus 404. Generated output rebuilt after removing temporary QA HTML. Static checks cover IDs/headings/metadata, local links/assets and anchors, page reachability, service/extra values, CSS/font assets and local-only form safeguards.
+- Supported managed preview was stopped; restarted normally. JavaScript initialized on Home, the Care brief and all 30 responsive samples. No app/security workaround was used. This resolves the earlier pending route/menu rechecks for the sampled flows, without claiming the previous environment failure was an application defect.
+- Desktop Home, Studio, Services and Care openings visually inspected. Thirty iframe layout samples: all ten documents at 320/390/768px frame widths, content widths 305/375/753px. No document horizontal overflow; not a complete device/browser audit. Narrow Home and fixed mobile actions visually inspected. Menu opened, aria-expanded became true; Escape closed it and restored false.
+- Direct care query selected Website care, changed the description label to 'What needs updating or looking after?', used the care placeholder, and advanced with only the description filled. Optional details could remain blank. Review contained Website care, the supplied test outline, no extras and an explicit not-sent notice. No enquiry was transmitted. Existing broader interaction tests are historical evidence; this focused copy pass did not repeat every download/clipboard/keyboard scenario.
+- Social card exported again with the revised Home headline using the supported viewport screenshot API, 1363 x 936. Platform crops/public-origin preview remain unverified.
+- Homepage evidence: docs/images/aldwyn-revised-home-2026-11-19.jpg. Source-review findings and research decisions saved with the build.
+
+Remaining: founder copy acceptance, real enquiry destination and delivery/data handling, approved prices/times/care terms, confirmed domain and applicable business information/policies, production host/metadata/indexing checks and explicit launch approval. No Lighthouse, production speed or client performance results claimed. No production deployment or Render branch change.
+
+
+## Approved focused revision — 20 November 2026
+
+Founder approved the preceding revision plan, with price/timing signals treated as the biggest remaining information gap and privacy review extended to the whole serving stack. Implemented sharper Home introduction and plain service labels; client-first portfolio with a smaller separate Studio project; real interior-page captures; Carwales 'Live website — development continues' status; consolidated one-package Care; consistent Project planner labels and visible local-only context; removed name/email fields and output lines; exact 1200 x 630 share image and metadata. No invented roles, historical decisions, results, prices, timelines, contacts or team claims.
+
+Checks and evidence:
+- Default build/static checks pass for ten documents. Added accessible-reference checking and a guard against name/email contact fields returning to the local planner. Configured-origin validation uses only synthetic https://example.com, followed by a default rebuild; no domain or indexing changed.
+- Browser inspected current desktop Home, Services at tablet width, portfolio grouping, Sweeney interior-capture section and Care package. Narrow portfolio and fixed mobile actions inspected; Menu opened and Escape closed it. Planner disclosure is outside collapsed navigation and was visible at 768 and 390px frame widths.
+- Thirty layout samples: all ten documents at 320/390/768px frame widths, content widths 305/375/753px, no document horizontal overflow and JS initialized. This is responsive sampling, not exhaustive device/browser certification.
+- All six planner choices tested through description, optional details, review and edit. Empty description remains on step 1 and is invalid. Care disables extras and excludes them from output. Initial improvements+connection query selected both. No name/email input or output lines. Synthetic data only; nothing sent. Copy status succeeded and dynamic Save produced a download event/path. The downloaded file was not independently opened.
+- A no-app-script mirror had no JS initialization class, kept the blank template link visible and left submit disabled. This is an app-script fallback check, not a full browser-JavaScript-disabled certification. Temporary QA pages removed by final build.
+- Native Care summary opened using Enter. Existing local links, anchors, allowlisted service queries and no-transmission/storage safeguards pass static checks.
+- New Sweeney About and Carwales radio-catalogue screenshots are actual 1348 x 926 desktop captures. Both sites were navigated read-only; no client content or settings changed. Mobile client captures were unavailable through supported controls and were not fabricated. Captions identify desktop views.
+- The clipped screenshot API timed out again. Captured the working viewport and extracted the exact fixed top-left card canvas (1200 x 630), without altering its contents. Export dimensions and metadata match; public-platform preview/crop testing remains pending. New JPGs decode successfully.
+- Lighthouse is not installed in the available environment. No numeric performance, accessibility or SEO badge added. Source checks and layout samples do not establish a Lighthouse score.
+
+Independent source critic rated editorial clarity 8/10 (subjective copy assessment) and found two issues: tablet planner disclosure was hidden inside the collapsed menu; Care guidance mentioned a nonexistent platform field. Both corrected, with affected browser/source rechecks. No further consequential source blocker reported.
+
+Privacy/launch record: docs/LAUNCH-READINESS.md inventories host/CDN/security metadata, local planner state and export, external links, and any future analytics/contact processing. Actual static-host logging fields, purposes, recipients, transfers and retention remain unverified. General Render web-service logging tables were not assumed to describe this static site. Render policy/DPA URLs were located, but the reader did not return substantive terms; no policy review or legal-compliance completion claimed. No public privacy notice invented. Official source URLs contain no tracking parameters.
+
+Evidence: docs/images/aldwyn-home-refined-2026-11-20.jpg, aldwyn-care-refined-2026-11-20.jpg and aldwyn-portfolio-refined-2026-11-20.jpg. Review branch/PR #3 only; no production deploy or Render branch update. Next: founder reviews the revision, approves realistic price/timing/Care figures and provides the actual domain and enquiry destination; verify whole-site provider processing before final policy and launch.

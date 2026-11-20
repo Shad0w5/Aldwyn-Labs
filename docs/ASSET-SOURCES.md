@@ -1,0 +1,42 @@
+# Current original brand artwork — 19 November 2026
+
+Created specifically for Aldwyn using the built-in image-generation tool. Three related material studies use aubergine, plum, iris and soft white: Assembly (content/design/build), Composition (page hierarchy and craft), Continuity (ongoing care). These are decorative illustrations, not client work or office photography. No generated logo is used. Exact prompts are retained in BRAND-ART-PROMPTS.md.
+
+Responsive 1120px and 640px WebP encodings live in dist/assets/brand-art. Original generated images remain in the conversation's saved image outputs; the repository contains the website-ready encodings. No semantic image editing was performed; only resizing/encoding. There are no remote asset requests.
+
+The prior architectural photo is no longer referenced in the website; its files and provenance below remain as historical source records.
+
+# Image sources
+
+## Editorial architecture photograph
+- Photographer: Lena Laurentez.
+- Source: https://unsplash.com/photos/concrete-pillars-create-a-modern-architectural-facade-Y3oTqJZvtRQ
+- Original image endpoint: https://images.unsplash.com/photo-1746458258547-6090bcf8349b
+- Licence: Unsplash License, https://unsplash.com/license (checked 19 November 2026). Source page identifies the image as free under that licence.
+- Files: dist/assets/editorial/structure.webp and structure-small.webp. Locally optimised WebP encodings of the downloaded photograph; crops and colour treatment are CSS presentation.
+- Use: architectural texture / visual reference for structure and detail. It does not depict Aldwyn's office, team, clients or work. Do not describe it as such.
+
+## Project previews
+The P.J. Sweeney and Carwales homepage screenshots were captured from the founder-supplied live URLs on 19 November 2026 for the portfolio, following the founder's request. They are dated snapshots rather than live embedded frames. See README and VALIDATION for exact destinations and status.
+
+## Brand and fonts
+Original supplied AL vectors and licensed Manrope/Inter files are retained unchanged. Font licences are in dist/assets/fonts/. No newly invented client logos, portraits, testimonials or results are used.
+
+
+## Website planning study
+Generated with the built-in image tool on 19 November 2026 for Home/Studio interior process sections. A staged overhead paper/pencil/page-outline illustration in the Aldwyn palette, not a client deliverable or office photo. Website encodings: dist/assets/brand-art/planning.webp (1200px) and planning-small.webp (640px). Exact prompt in BRAND-ART-PROMPTS.md. Care workflow SVGs are original code-native decorative illustrations; Services uses existing approved project captures.
+
+
+## Social card — 19 November 2026
+
+Editable HTML/CSS source: src/social-card.html. Export: dist/assets/social-card.jpg, native browser viewport capture, 1363 × 936 JPEG. Uses the unchanged approved logo-web.svg, licensed local fonts and the existing authorised client homepage captures. No new client outcomes or logo geometry. Clipped capture API timed out; full viewport export with central safe composition retained. Public-origin configuration and social-platform crop checks remain launch tasks.
+
+
+The social-card export was refreshed during the copy rethink with 'Business websites. Considered from the start.' Source assets and dimensions remain as above. Homepage review evidence: docs/images/aldwyn-revised-home-2026-11-19.jpg, captured from the managed review preview.
+
+
+## Interior website captures — 20 November 2026
+
+Actual desktop browser captures from the founder-authorised project sites: https://www.pjsweeney.ie/about.html and https://carwales.ie/c/radios. Saved as dist/assets/projects/pj-sweeney-about.jpg and carwales-catalogue.jpg, each 1348 x 926 JPEG. These are page views, not mobile renders, new design concepts, client endorsements or evidence of outcomes. No client content or implementation was modified. Mobile client captures were not available through the supported browser controls; none fabricated.
+
+Social-card source is now a fixed top-left 1200 x 630 HTML canvas. Browser clipped capture timed out; a successful viewport screenshot was cropped exactly to that rendered canvas, without changing its design. Export dimensions and OG metadata are 1200 x 630. Public platform previews remain pending.
